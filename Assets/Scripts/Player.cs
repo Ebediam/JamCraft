@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
+    public PlayerData playerData;
+
     public PlayerInputs input;
     public CharacterController controller;
 
     public Transform groundCheck;
+    public Transform ceilingCheck;
     public float groundCheckDistance;
 
     public LayerMask groundLayer;
@@ -55,6 +58,12 @@ public class Player : MonoBehaviour
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckDistance, groundLayer);
+
+        if(Physics.CheckSphere(ceilingCheck.position, groundCheckDistance, groundLayer))
+        {
+            jumpBoost = false;
+            velocity.y = 0f;
+        }
                      
         if(isGrounded)
         {
