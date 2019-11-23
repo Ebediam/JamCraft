@@ -7,4 +7,7 @@ public class PlayerData : ScriptableObject
 {
     public int activeLevel;
 
+    public List<PickupData> storedPickups;
+    public List<int> amount;
+
 }

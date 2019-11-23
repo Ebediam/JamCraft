@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Cinemachine;
 public class Player : MonoBehaviour
 {
     public PlayerData playerData;
+
+    public delegate void InteractionDelegate();
+    public InteractionDelegate InteractionEvent;
 
     public PlayerInputs input;
     public CharacterController controller;
@@ -17,8 +21,11 @@ public class Player : MonoBehaviour
 
     bool isGrounded;
     bool jumpBoost;
+    bool lockMovement;
 
     public float speed;
+
+    
 
     public float gravity = -9.81f;
 
@@ -29,13 +36,15 @@ public class Player : MonoBehaviour
     public float jumpBoostMaxTime;
     float jumpVelocity;
 
+    bool isTalking;
+
 
     Vector2 movementDirection;
     // Start is called before the first frame update
     void Awake()
     {
         input = new PlayerInputs();
-        input.GamePlay.Jump.performed += Jump;
+        input.GamePlay.Jump.performed += InteractionOrJump;
         input.GamePlay.Jump.canceled += JumpBoostEnds;
 
         input.GamePlay.Move.performed += Move;
@@ -81,7 +90,11 @@ public class Player : MonoBehaviour
             }
         }
 
-        controller.Move(new Vector3(-movementDirection.y, 0f, movementDirection.x)*speed*Time.deltaTime);
+        if (!lockMovement)
+        {
+            controller.Move(new Vector3(-movementDirection.y, 0f, movementDirection.x) * speed * Time.deltaTime);
+        }
+
 
 
         velocity.y += gravity*Time.deltaTime;
@@ -100,19 +113,30 @@ public class Player : MonoBehaviour
 
     }
 
-    public void Jump(InputAction.CallbackContext context)
+    public void InteractionOrJump(InputAction.CallbackContext context)
     {
         if (!isGrounded)
         {
             return;
         }
 
+        if (InteractionEvent != null)
+        {
+            InteractionEvent();
+        }
+        else
+        {
+            Jump();
+        }    
+
         
+    }
+
+    public void Jump()
+    {
         velocity.y = jumpVelocity;
         jumpBoost = true;
         Invoke("JumpBoostEndInvoke", jumpBoostMaxTime);
-
-
     }
 
     public void JumpBoostEnds(InputAction.CallbackContext context)
@@ -125,4 +149,6 @@ public class Player : MonoBehaviour
         CancelInvoke("JumpBoostEndInvoke");
         jumpBoost = false;
     }
+
+
 }

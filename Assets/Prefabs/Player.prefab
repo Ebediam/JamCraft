@@ -230,7 +230,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3299804816513106933}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 0f389b9d7665610488d4408fee20800c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -268,6 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: be17e7bac5aa3d043981b2e04ba856d1, type: 2}
+  conversationCam: {fileID: 0}
   controller: {fileID: 3299804816513106934}
   groundCheck: {fileID: 3299804816469831423}
   ceilingCheck: {fileID: 3966803869780504232}
@@ -279,7 +280,7 @@ MonoBehaviour:
   gravity: -70
   jumpHeight: 2
   jumpBoostAmount: 40
-  jumpBoostMaxTime: 0.5
+  jumpBoostMaxTime: 0.4
 --- !u!54 &7290576806776763384
 Rigidbody:
   m_ObjectHideFlags: 0
