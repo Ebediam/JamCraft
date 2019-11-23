@@ -120,8 +120,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279111182
-  m_fontColor: {r: 0.05660379, g: 0.05660379, b: 0.05660379, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -382,7 +382,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439621197086180608}
-  m_LocalRotation: {x: 0.008123726, y: 0.9863624, z: -0.15542004, w: 0.053553373}
+  m_LocalRotation: {x: 0.008123718, y: 0.9863624, z: -0.15542, w: 0.053553373}
   m_LocalPosition: {x: -0.5799998, y: 4.3, z: 5.43}
   m_LocalScale: {x: 1.0000002, y: 1, z: 1.0000002}
   m_Children:
@@ -1569,11 +1569,6 @@ MonoBehaviour:
   interactCam: {fileID: 3418042907999324866}
   textPrompt: {fileID: 5272361128643907181}
   data: {fileID: 11400000, guid: 7444b5f375ec1d84ab41d6b3cdb953f5, type: 2}
-  conversationData:
-  - {fileID: 11400000, guid: 657c05aee5ded1440b4f587a1f6414fe, type: 2}
-  - {fileID: 11400000, guid: ac4f6afbada359a40930a7dfbba8bcd5, type: 2}
-  exhaustConversation: {fileID: 11400000, guid: 9d4c8a3b307c18a418ad32401f243211,
-    type: 2}
   conversationNumber: 0
   conversationBubble: {fileID: 6829502036534965526}
 --- !u!1 &5315312735382902536
