@@ -71,34 +71,9 @@ public class PickUp : Interactable
         }
             base.InteractionStarts();
 
-        
 
-        if(player.playerData.storedPickups.Count == 0)
-        {
-            player.playerData.storedPickups.Add(data);
-            player.playerData.amount.Add(1);
-        }
-        else
-        {
-            int i = 0;
-            bool alreadyHadPickup = false;
-            foreach(PickupData storedPickupData in player.playerData.storedPickups)
-            {
-                if(storedPickupData == data)
-                {
-                    player.playerData.amount[i]++;
-                    alreadyHadPickup = true;
-                    break;
-                }
-                i++;
-            }
 
-            if (!alreadyHadPickup)
-            {
-                player.playerData.storedPickups.Add(data);
-                player.playerData.amount.Add(1);
-            }
-        }
+        GameManager.GiveItemToPlayer(player, data);
         
 
         ResetInteractable();
@@ -110,7 +85,7 @@ public class PickUp : Interactable
         }*/
 
         
-        this.gameObject.SetActive(false);
+        this.gameObject.SetActive(false); 
         
 
     }

@@ -24,9 +24,35 @@ public class GameManager : MonoBehaviour
         player.playerData.activeLevel = SceneManager.GetActiveScene().buildIndex;
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public static void GiveItemToPlayer(Player player, PickupData item)
     {
-        
+        if (player.playerData.storedPickups.Count == 0)
+        {
+            player.playerData.storedPickups.Add(item);
+            player.playerData.amount.Add(1);
+        }
+        else
+        {
+            int i = 0;
+            bool alreadyHadPickup = false;
+            foreach (PickupData storedPickupData in player.playerData.storedPickups)
+            {
+                if (storedPickupData == item)
+                {
+                    player.playerData.amount[i]++;
+                    alreadyHadPickup = true;
+                    break;
+                }
+                i++;
+            }
+
+            if (!alreadyHadPickup)
+            {
+                player.playerData.storedPickups.Add(item);
+                player.playerData.amount.Add(1);
+            }
+        }
     }
+
 }

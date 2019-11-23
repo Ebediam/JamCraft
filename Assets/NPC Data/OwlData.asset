@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9088cb3e8b251d4182f77c94f59bfa9, type: 3}
+  m_Name: OwlData
+  m_EditorClassIdentifier: 
+  name: Owl
+  greetingsConversation: {fileID: 11400000, guid: 657c05aee5ded1440b4f587a1f6414fe,
+    type: 2}
+  questCompletedConversation: {fileID: 11400000, guid: a23679942a0b071478b4729be0a461a9,
+    type: 2}
+  questNotCompletedConversation: {fileID: 11400000, guid: 9d4c8a3b307c18a418ad32401f243211,
+    type: 2}
+  exhaustedConversation: {fileID: 11400000, guid: ac4f6afbada359a40930a7dfbba8bcd5,
+    type: 2}
+  itemRequest:
+  - {fileID: 11400000, guid: e587e1c10969ed549b2703ebf8f77e2d, type: 2}
+  itemAmount: 02000000
+  hasGreeted: 0
+  hasQuest: 1
+  questFinished: 0

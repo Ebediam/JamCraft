@@ -1568,7 +1568,13 @@ MonoBehaviour:
   interactableCamera: 1
   interactCam: {fileID: 3418042907999324866}
   textPrompt: {fileID: 5272361128643907181}
-  conversationData: {fileID: 11400000, guid: 657c05aee5ded1440b4f587a1f6414fe, type: 2}
+  data: {fileID: 11400000, guid: 7444b5f375ec1d84ab41d6b3cdb953f5, type: 2}
+  conversationData:
+  - {fileID: 11400000, guid: 657c05aee5ded1440b4f587a1f6414fe, type: 2}
+  - {fileID: 11400000, guid: ac4f6afbada359a40930a7dfbba8bcd5, type: 2}
+  exhaustConversation: {fileID: 11400000, guid: 9d4c8a3b307c18a418ad32401f243211,
+    type: 2}
+  conversationNumber: 0
   conversationBubble: {fileID: 6829502036534965526}
 --- !u!1 &5315312735382902536
 GameObject:

@@ -93,6 +93,7 @@ public class Player : MonoBehaviour
         if (!lockMovement)
         {
             controller.Move(new Vector3(-movementDirection.y, 0f, movementDirection.x) * speed * Time.deltaTime);
+            transform.LookAt(transform.position + new Vector3(-movementDirection.y, 0f, movementDirection.x));
         }
 
 
@@ -126,6 +127,7 @@ public class Player : MonoBehaviour
         }
         else
         {
+            
             Jump();
         }    
 
@@ -149,6 +151,26 @@ public class Player : MonoBehaviour
         CancelInvoke("JumpBoostEndInvoke");
         jumpBoost = false;
     }
+
+    public void LockMovement()
+    {
+        if (lockMovement)
+        {
+            return;
+        }
+        lockMovement = true;
+    }
+
+    public void UnlockMovement()
+    {
+        if (!lockMovement)
+        {
+            return;
+        }
+
+        lockMovement = false;
+    }
+
 
 
 }
