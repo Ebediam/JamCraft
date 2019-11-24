@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   activeLevel: 0
-  storedPickups:
-  - {fileID: 11400000, guid: e587e1c10969ed549b2703ebf8f77e2d, type: 2}
-  amount: 01000000
+  storedPickups: []
+  amount: 

@@ -47,7 +47,7 @@ public class NPC : Interactable
     public override void InteractionStarts()
     {
         player.LockMovement();
-        player.transform.LookAt(player.transform.position + new Vector3(transform.position.x, 0f, transform.position.z));
+        
         conversationLine = 0;
         InteractionBubbleEnds();
         base.InteractionStarts();
@@ -157,13 +157,13 @@ public class NPC : Interactable
             }
             requestItemNumber++;
         }
-
+    
 
         if (data.rewardItem)
         {
             GameManager.GiveItemToPlayer(player, data.rewardItem);
         }
 
-
+        GameManager.InventoryEvent?.Invoke();
     }
 }

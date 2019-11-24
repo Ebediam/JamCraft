@@ -8,20 +8,26 @@ public class Interactable : MonoBehaviour
 {
     public bool interactableCamera;
     public CinemachineVirtualCamera interactCam;
-    protected Player player;
+    public Player player;
     public TextMeshPro textPrompt;
-
+    public Transform textPromptMover;
+    private LookAt lookAt;
     bool isInteracting;
+    
+
 
     public void Awake()
     {
         textPrompt.gameObject.SetActive(false);
+        lookAt = textPromptMover.gameObject.AddComponent<LookAt>();
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Player>())
         {
             player = other.GetComponent<Player>();
+            lookAt.player = player;
             player.InteractionEvent += InteractionStartChecker;
             InteractionBubbleStarts();
         }

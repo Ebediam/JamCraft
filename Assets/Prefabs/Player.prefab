@@ -136,10 +136,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   speed: 10
+  thirdPersonControl: 0
   gravity: -70
+  turnSpeed: 7
   jumpHeight: 2
   jumpBoostAmount: 40
   jumpBoostMaxTime: 0.4
+  cameraTransform: {fileID: 0}
 --- !u!54 &7290576806776763384
 Rigidbody:
   m_ObjectHideFlags: 0

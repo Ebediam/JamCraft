@@ -7,5 +7,6 @@ using UnityEngine;
 public class PickupData : ScriptableObject
 {
     public new string name;
+    public Sprite icon;
 
 }

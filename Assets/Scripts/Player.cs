@@ -27,11 +27,15 @@ public class Player : MonoBehaviour
 
     public float speed;
 
-    
+    public bool thirdPersonControl;
 
+    float turnSmoothVelocity;
     public float gravity = -9.81f;
 
     Vector3 velocity;
+
+    public float turnSmoothTime = 0.1f;
+    float currentSpeed;
 
     public float jumpHeight;
     public float jumpBoostAmount;
@@ -39,6 +43,7 @@ public class Player : MonoBehaviour
     float jumpVelocity;
 
     bool isTalking;
+    public Transform cameraTransform;
 
 
     Vector2 movementDirection;
@@ -68,6 +73,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.isPaused)
+        {
+            return;
+        }
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckDistance, groundLayer);
 
         if(Physics.CheckSphere(ceilingCheck.position, groundCheckDistance, groundLayer))
@@ -95,9 +105,37 @@ public class Player : MonoBehaviour
 
         if (!lockMovement)
         {
-            controller.Move(new Vector3(-movementDirection.y, 0f, movementDirection.x) * speed * Time.deltaTime);
+            if (thirdPersonControl)
+            {
+                
+                if (movementDirection.y != 0)
+                {
+                    
+                    currentSpeed = Mathf.Lerp(currentSpeed, speed, 0.1f);
 
-            transform.LookAt(transform.position + new Vector3(-movementDirection.y, 0f, movementDirection.x));
+                    float targetRotation = Mathf.Atan2(movementDirection.x, movementDirection.y) * Mathf.Rad2Deg +cameraTransform.eulerAngles.y ;
+
+                    transform.localEulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, turnSmoothTime);
+                }
+                else
+                {
+                    currentSpeed = Mathf.Lerp(currentSpeed, 0f, 0.2f);
+                }                              
+                
+
+                controller.Move(transform.forward * currentSpeed*movementDirection.y*Time.deltaTime);
+            }
+            else
+            {
+                controller.Move(new Vector3(-movementDirection.y, 0f, movementDirection.x) * speed * Time.deltaTime);
+
+                transform.LookAt(transform.position + new Vector3(-movementDirection.y, 0f, movementDirection.x));
+            }
+
+        }
+        else
+        {
+            currentSpeed = 0f;
         }
 
 
@@ -110,7 +148,7 @@ public class Player : MonoBehaviour
         controller.Move(velocity*Time.deltaTime);
 
 
-        animator.SetFloat("speedPercent", movementDirection.magnitude);
+        animator.SetFloat("speedPercent", currentSpeed/speed);
         animator.SetBool("isJumping", !isGrounded);
 
     }

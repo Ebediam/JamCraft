@@ -16,6 +16,7 @@ public class CameraListener : MonoBehaviour
             player = other.GetComponent<Player>();
             camera.Priority = 11;
             camera.LookAt = player.transform;
+            Invoke("ChangePlayerControl", 1f);
         }
     }
 
@@ -24,8 +25,18 @@ public class CameraListener : MonoBehaviour
         if (other.GetComponent<Player>())
         {            
             camera.Priority = 1;
+            player.thirdPersonControl = true;
             player = null;
             camera.LookAt = null;
+
+        }
+    }
+
+    private void ChangePlayerControl()
+    {
+        if (player)
+        {
+            player.thirdPersonControl = false;
         }
     }
 

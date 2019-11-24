@@ -41,6 +41,30 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""RotationX"",
+                    ""type"": ""Button"",
+                    ""id"": ""2858dc8d-d9ce-4403-8a84-4f92bc257425"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""RotationY"",
+                    ""type"": ""Button"",
+                    ""id"": ""f62d7e15-e82a-4240-8786-cb9ee5e0fd7b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""0366c873-7f3d-4226-9e57-73a329ff8e9e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -197,6 +221,61 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""action"": ""CameraMove"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f2114322-12c8-4446-9b0f-99dcc6fb70fb"",
+                    ""path"": ""<Mouse>/delta/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotationX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a8553fe1-4dd0-4102-9ff1-522783955ac0"",
+                    ""path"": ""<Mouse>/delta/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotationY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d90b7a75-9466-488e-8e63-17e212c18a01"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5a5d32f9-ebaf-475e-bd6f-55c1ad204d89"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""daf8ae7c-1634-4cba-9498-4ea7e74916ea"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -208,6 +287,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         m_GamePlay_Move = m_GamePlay.FindAction("Move", throwIfNotFound: true);
         m_GamePlay_Jump = m_GamePlay.FindAction("Jump", throwIfNotFound: true);
         m_GamePlay_CameraMove = m_GamePlay.FindAction("CameraMove", throwIfNotFound: true);
+        m_GamePlay_RotationX = m_GamePlay.FindAction("RotationX", throwIfNotFound: true);
+        m_GamePlay_RotationY = m_GamePlay.FindAction("RotationY", throwIfNotFound: true);
+        m_GamePlay_Pause = m_GamePlay.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -260,6 +342,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_GamePlay_Move;
     private readonly InputAction m_GamePlay_Jump;
     private readonly InputAction m_GamePlay_CameraMove;
+    private readonly InputAction m_GamePlay_RotationX;
+    private readonly InputAction m_GamePlay_RotationY;
+    private readonly InputAction m_GamePlay_Pause;
     public struct GamePlayActions
     {
         private @PlayerInputs m_Wrapper;
@@ -267,6 +352,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_GamePlay_Move;
         public InputAction @Jump => m_Wrapper.m_GamePlay_Jump;
         public InputAction @CameraMove => m_Wrapper.m_GamePlay_CameraMove;
+        public InputAction @RotationX => m_Wrapper.m_GamePlay_RotationX;
+        public InputAction @RotationY => m_Wrapper.m_GamePlay_RotationY;
+        public InputAction @Pause => m_Wrapper.m_GamePlay_Pause;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -285,6 +373,15 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @CameraMove.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnCameraMove;
                 @CameraMove.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnCameraMove;
                 @CameraMove.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnCameraMove;
+                @RotationX.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRotationX;
+                @RotationX.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRotationX;
+                @RotationX.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRotationX;
+                @RotationY.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRotationY;
+                @RotationY.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRotationY;
+                @RotationY.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnRotationY;
+                @Pause.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
@@ -298,6 +395,15 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @CameraMove.started += instance.OnCameraMove;
                 @CameraMove.performed += instance.OnCameraMove;
                 @CameraMove.canceled += instance.OnCameraMove;
+                @RotationX.started += instance.OnRotationX;
+                @RotationX.performed += instance.OnRotationX;
+                @RotationX.canceled += instance.OnRotationX;
+                @RotationY.started += instance.OnRotationY;
+                @RotationY.performed += instance.OnRotationY;
+                @RotationY.canceled += instance.OnRotationY;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -307,5 +413,8 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnCameraMove(InputAction.CallbackContext context);
+        void OnRotationX(InputAction.CallbackContext context);
+        void OnRotationY(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }
