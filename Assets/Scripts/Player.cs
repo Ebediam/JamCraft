@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 {
     public PlayerData playerData;
 
+    public Animator animator;
+
     public delegate void InteractionDelegate();
     public InteractionDelegate InteractionEvent;
 
@@ -77,6 +79,7 @@ public class Player : MonoBehaviour
         if(isGrounded)
         {
             jumpBoost = true;
+
             if(velocity.y < 0f)
             {
                 velocity.y = -2f;
@@ -93,14 +96,23 @@ public class Player : MonoBehaviour
         if (!lockMovement)
         {
             controller.Move(new Vector3(-movementDirection.y, 0f, movementDirection.x) * speed * Time.deltaTime);
+
             transform.LookAt(transform.position + new Vector3(-movementDirection.y, 0f, movementDirection.x));
         }
+
+
+
 
 
 
         velocity.y += gravity*Time.deltaTime;
 
         controller.Move(velocity*Time.deltaTime);
+
+
+        animator.SetFloat("speedPercent", movementDirection.magnitude);
+        animator.SetBool("isJumping", !isGrounded);
+
     }
 
     public void Move(InputAction.CallbackContext context)

@@ -21,7 +21,6 @@ public class Interactable : MonoBehaviour
     {
         if (other.GetComponent<Player>())
         {
-            Debug.Log("OnTriggerenter");
             player = other.GetComponent<Player>();
             player.InteractionEvent += InteractionStartChecker;
             InteractionBubbleStarts();
@@ -44,11 +43,13 @@ public class Interactable : MonoBehaviour
         {
             InteractionStarts();
         }
+
     }
 
     public virtual void InteractionStarts()
     {
         isInteracting = true;
+        InteractionBubbleEnds();
         if (interactableCamera)
         {
             interactCam.Priority = 11;
@@ -79,6 +80,11 @@ public class Interactable : MonoBehaviour
         player.InteractionEvent = null;
         player = null;
         InteractionBubbleEnds();
+        if (isInteracting)
+        {
+            InteractionEnds();
+
+        }
     }
 
 }
