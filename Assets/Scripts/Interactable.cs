@@ -58,7 +58,7 @@ public class Interactable : MonoBehaviour
         InteractionBubbleEnds();
         if (interactableCamera)
         {
-            interactCam.Priority = 11;
+            interactCam.Priority = 15;
         }
     }
 

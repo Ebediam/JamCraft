@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
 
     public LayerMask groundLayer;
 
+    public List<AudioSource> stepSFX;
+
     bool isGrounded;
     bool jumpBoost;
     bool lockMovement;
@@ -31,6 +33,7 @@ public class Player : MonoBehaviour
 
     float turnSmoothVelocity;
     public float gravity = -9.81f;
+    public bool ignoreGravity;
 
     Vector3 velocity;
 
@@ -45,6 +48,8 @@ public class Player : MonoBehaviour
     bool isTalking;
     public Transform cameraTransform;
 
+    public AudioSource jumpSFX;
+    public AudioSource fallSFX;
 
     Vector2 movementDirection;
     // Start is called before the first frame update
@@ -88,6 +93,14 @@ public class Player : MonoBehaviour
                      
         if(isGrounded)
         {
+            if (!jumpBoost)
+            {
+                if (!fallSFX.isPlaying)
+                {
+                    fallSFX.Play();
+                }
+                
+            }
             jumpBoost = true;
 
             if(velocity.y < 0f)
@@ -97,6 +110,8 @@ public class Player : MonoBehaviour
         }
         else
         {
+           
+            
             if (jumpBoost)
             {
                 velocity.y += jumpBoostAmount * Time.deltaTime;
@@ -116,6 +131,8 @@ public class Player : MonoBehaviour
                     float targetRotation = Mathf.Atan2(movementDirection.x, movementDirection.y) * Mathf.Rad2Deg +cameraTransform.eulerAngles.y ;
 
                     transform.localEulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, turnSmoothTime);
+                    PlayFootstepSFX();
+
                 }
                 else
                 {
@@ -141,11 +158,14 @@ public class Player : MonoBehaviour
 
 
 
+        if (!ignoreGravity)
+        {
+            velocity.y += gravity * Time.deltaTime;
+
+            controller.Move(velocity * Time.deltaTime);
+        }
 
 
-        velocity.y += gravity*Time.deltaTime;
-
-        controller.Move(velocity*Time.deltaTime);
 
 
         animator.SetFloat("speedPercent", currentSpeed/speed);
@@ -176,8 +196,7 @@ public class Player : MonoBehaviour
             InteractionEvent();
         }
         else
-        {
-            
+        {            
             Jump();
         }    
 
@@ -186,6 +205,7 @@ public class Player : MonoBehaviour
 
     public void Jump()
     {
+        jumpSFX.Play();
         velocity.y = jumpVelocity;
         jumpBoost = true;
         Invoke("JumpBoostEndInvoke", jumpBoostMaxTime);
@@ -221,6 +241,21 @@ public class Player : MonoBehaviour
         lockMovement = false;
     }
 
+    public void PlayFootstepSFX()
+    {
+
+        foreach(AudioSource audio in stepSFX)
+        {
+            if (audio.isPlaying)
+            {
+                return;
+            }
+        }
+
+        int index = Random.Range(0, stepSFX.Count);
+        stepSFX[index].Play();
+
+    }
 
 
 }

@@ -448,8 +448,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279709567
-  m_fontColor: {r: 0.5, g: 0.18638551, b: 0.09198114, a: 1}
+    rgba: 4288525823
+  m_fontColor: {r: 1, g: 0.7111137, b: 0.6179246, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -767,6 +767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableCamera: 1
   interactCam: {fileID: 1490838179658184845}
+  player: {fileID: 0}
   textPrompt: {fileID: 1490838177739872719}
   textPromptMover: {fileID: 1077665280285147391}
   signText: {fileID: 1490838178065256662}
