@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac9bc89b45c73d846a45292e1411ba34, type: 3}
-  m_Name: RedOwl Greetings
+  m_Name: BW Quest completed
   m_EditorClassIdentifier: 
   lines:
-  - How peaceful is this place...
-  - '...'
+  - Do you bring the...?
+  - Oh, yeah, the hammer!
+  - And the wood, the rocks, the vines!
+  - Finally I can finish the bridge!
+  - Wait a moment, please...

@@ -18,11 +18,16 @@ public class GameManager : MonoBehaviour
     public PlayerInputs inputs;
     public static bool isPaused;
 
+    public AudioSource pickupSFX;
+            
     private void Awake()
     {
         inputs = new PlayerInputs();
 
         inputs.GamePlay.Pause.performed += PauseGame;
+
+        InventoryEvent += PlayPickUPSFX;
+
     }
 
     // Start is called before the first frame update
@@ -58,8 +63,10 @@ public class GameManager : MonoBehaviour
     {
         if (player.playerData.storedPickups.Count == 0)
         {
+            item.amount++;
             player.playerData.storedPickups.Add(item);
-            player.playerData.amount.Add(1);
+            
+            
         }
         else
         {
@@ -69,7 +76,7 @@ public class GameManager : MonoBehaviour
             {
                 if (storedPickupData == item)
                 {
-                    player.playerData.amount[i]++;
+                    player.playerData.storedPickups[i].amount++;
                     alreadyHadPickup = true;
                     break;
                 }
@@ -78,8 +85,21 @@ public class GameManager : MonoBehaviour
 
             if (!alreadyHadPickup)
             {
+                item.amount++;
                 player.playerData.storedPickups.Add(item);
-                player.playerData.amount.Add(1);
+                
+            }
+        }
+
+        if (item.showsInPlayer)
+        {
+            if (!player.isHandling)
+            {
+                GameObject prefab = Instantiate(item.prefab);
+                prefab.transform.position = player.objectHolder.transform.position;
+                prefab.transform.rotation = player.objectHolder.transform.rotation;
+                prefab.transform.parent = player.objectHolder.transform;
+                player.isHandling = true;
             }
         }
 
@@ -104,6 +124,11 @@ public class GameManager : MonoBehaviour
             canvas.SetActive(true);
             Time.timeScale = 0f;
         }
+    }
+
+    public void PlayPickUPSFX()
+    {
+        pickupSFX.Play();
     }
 
 

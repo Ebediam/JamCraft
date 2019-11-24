@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873048987931018369}
   m_LocalRotation: {x: 0.028460374, y: 0.9693411, z: -0.20250598, w: 0.1362321}
-  m_LocalPosition: {x: -0.68, y: 4.82, z: 5.81}
+  m_LocalPosition: {x: -0.68, y: 5.31, z: 5.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7116972774834278787}
@@ -258,7 +258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4041187172766354149}
   m_LocalRotation: {x: 0.01067397, y: 0.98091924, z: -0.18518843, w: 0.058214158}
-  m_LocalPosition: {x: -0.6799998, y: 4.82, z: 5.81}
+  m_LocalPosition: {x: -0.6799998, y: 5.31, z: 5.79}
   m_LocalScale: {x: 1.0000002, y: 1, z: 1.0000002}
   m_Children:
   - {fileID: 7265340581141188690}
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 1
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
+  m_LookAt: {fileID: 851347566603929836}
   m_Follow: {fileID: 7724389386022367473}
   m_Lens:
     FieldOfView: 40
@@ -504,6 +504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableCamera: 1
   interactCam: {fileID: 324525672380532007}
+  player: {fileID: 0}
   textPrompt: {fileID: 7116972775915291016}
   textPromptMover: {fileID: 2726761148484314659}
   data: {fileID: 11400000, guid: 1aae90b33381a38438ba4db53882ffc2, type: 2}
@@ -739,7 +740,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7635102272906702682}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.08, y: 3.86, z: -0.4}
+  m_LocalPosition: {x: 0.08, y: 3.64, z: -0.4}
   m_LocalScale: {x: 0.5, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 3165926682543445296}

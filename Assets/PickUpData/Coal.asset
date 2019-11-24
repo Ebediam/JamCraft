@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 320053719160e1f479dd30d3798850e5, type: 3}
-  m_Name: Stone
+  m_Name: Coal
   m_EditorClassIdentifier: 
-  name: Stone
-  icon: {fileID: 21300000, guid: d0d545e4b5b328c4e9f49dbd47e68722, type: 3}
-  verb: Pickup
-  prefab: {fileID: 4603425244091355154, guid: 7105a41b243a1bc4f9e114ed5a2634c1, type: 3}
+  name: Coal
+  icon: {fileID: 21300000, guid: c2b1c166d1adabb41a252d59373628ee, type: 3}
+  verb: Mine
+  requiredTool: {fileID: 11400000, guid: 16390389a73efa14197fa986f211ae57, type: 2}
+  prefab: {fileID: 5848776873218762285, guid: 4c0c8ce24677da84ea04bee85dd889f6, type: 3}
   showsInPlayer: 0

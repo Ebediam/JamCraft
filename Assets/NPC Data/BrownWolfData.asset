@@ -10,22 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9088cb3e8b251d4182f77c94f59bfa9, type: 3}
-  m_Name: FoxData
+  m_Name: BrownWolfData
   m_EditorClassIdentifier: 
-  name: Fox
-  greetingsConversation: {fileID: 11400000, guid: 6f8e1d1d4b979a54ca2ba925c75ade17,
+  name: Brown Wolf
+  greetingsConversation: {fileID: 11400000, guid: ba1394d3b9b11354792e33daf8c1d16c,
     type: 2}
-  questCompletedConversation: {fileID: 11400000, guid: 04a5b941cfe9071498ac62fb45651430,
+  questCompletedConversation: {fileID: 11400000, guid: d42121086ab6a404f8b00a20676e4b0e,
     type: 2}
-  questNotCompletedConversation: {fileID: 11400000, guid: b012406afc1db1f45bbcac4285ea6901,
+  questNotCompletedConversation: {fileID: 11400000, guid: 9a86264f06e630b4cac042a094f17905,
     type: 2}
-  exhaustedConversation: {fileID: 11400000, guid: 74d3b7546a0e5b144b0c5f227d956801,
+  exhaustedConversation: {fileID: 11400000, guid: 78105ef730bc9d14b9e7fd43e5616c76,
     type: 2}
   itemRequest:
   - {fileID: 11400000, guid: e587e1c10969ed549b2703ebf8f77e2d, type: 2}
-  - {fileID: 11400000, guid: 0a76fd9abb7bde34e8d63921f733746e, type: 2}
-  itemAmount: 0100000001000000
-  rewardItem: {fileID: 11400000, guid: 16390389a73efa14197fa986f211ae57, type: 2}
+  itemAmount: 02000000
+  rewardItem: {fileID: 0}
   hasGreeted: 1
   hasQuest: 0
   questFinished: 1

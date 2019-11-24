@@ -52,7 +52,7 @@ public class PickUp : Interactable
     public override void InteractionBubbleStarts()
     {
         base.InteractionBubbleStarts();
-        textPrompt.text = "Pickup " + data.name;
+        textPrompt.text = data.verb+" "+ data.name;
     }
 
     public override void InteractionBubbleEnds()
@@ -69,12 +69,36 @@ public class PickUp : Interactable
             Debug.Log("No player detected");
             return;
         }
-            base.InteractionStarts();
+
+        bool receiveItem = false;
+        if (data.requiredTool)
+        {
+            foreach(PickupData item in player.playerData.storedPickups)
+            {
+                if(data.requiredTool == item)
+                {
+                    receiveItem = true;
+                                        
+                }
+            }
+        }
+        else
+        {
+            receiveItem = true;
+        }
+
+        if (!receiveItem)
+        {
+            return;
+        }
+
+
+        base.InteractionStarts();
 
 
 
         GameManager.GiveItemToPlayer(player, data);
-        
+
 
         ResetInteractable();
 

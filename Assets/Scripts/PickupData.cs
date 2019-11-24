@@ -9,4 +9,13 @@ public class PickupData : ScriptableObject
     public new string name;
     public Sprite icon;
 
+    public string verb;
+
+    public PickupData requiredTool;
+
+    public GameObject prefab;
+    public bool showsInPlayer;
+
+    public int amount;
+
 }

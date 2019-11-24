@@ -14,3 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Branch
   icon: {fileID: 21300000, guid: 35b49a76b7be87e42b8151ebbf93a298, type: 3}
+  verb: 'Pickup '
+  requiredTool: {fileID: 0}
+  prefab: {fileID: 1918410558276658252, guid: c896773a51b9b264ebcc98c1747ed6b3, type: 3}
+  showsInPlayer: 0
+  amount: 7

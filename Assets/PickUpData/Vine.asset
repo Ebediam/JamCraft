@@ -9,9 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac9bc89b45c73d846a45292e1411ba34, type: 3}
-  m_Name: RedOwl Greetings
+  m_Script: {fileID: 11500000, guid: 320053719160e1f479dd30d3798850e5, type: 3}
+  m_Name: Vine
   m_EditorClassIdentifier: 
-  lines:
-  - How peaceful is this place...
-  - '...'
+  name: Vine
+  icon: {fileID: 0}
+  verb: 
+  requiredTool: {fileID: 0}
+  prefab: {fileID: 0}
+  showsInPlayer: 0
+  amount: 0

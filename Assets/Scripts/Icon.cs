@@ -43,7 +43,7 @@ public class Icon : MonoBehaviour
         if (data.storedPickups.Count > position)
         {
             textName.text = data.storedPickups[position].name;
-            textNumber.text = data.amount[position].ToString();
+            textNumber.text = data.storedPickups[position].amount.ToString();
             sprite.sprite = data.storedPickups[position].icon;
         }
         else

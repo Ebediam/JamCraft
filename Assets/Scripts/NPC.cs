@@ -13,6 +13,9 @@ public class NPC : Interactable
     public ConversationBubble conversationBubble;
     ConversationData conversation;
 
+    public delegate void QuestDelegate();
+    public QuestDelegate QuestCompletedEvent;
+
     int conversationLine;
 
     bool isSpeaking;
@@ -122,7 +125,7 @@ public class NPC : Interactable
                 
                 if(requestItem == playerItem)
                 {
-                    if(data.itemAmount[requestItemNumber] <= player.playerData.amount[playerItemNumber])
+                    if(data.itemAmount[requestItemNumber] <= playerItem.amount)
                     {
                         questCheck[requestItemNumber] = true;
                     }
@@ -141,6 +144,7 @@ public class NPC : Interactable
        }
 
         data.questFinished = true;
+        QuestCompletedEvent?.Invoke();
 
         requestItemNumber = 0;
 
@@ -151,7 +155,7 @@ public class NPC : Interactable
             {
                 if (requestItem == playerItem)
                 {
-                    player.playerData.amount[playerItemNumber] -= data.itemAmount[requestItemNumber];
+                    playerItem.amount -= data.itemAmount[requestItemNumber];
                 }
                 playerItemNumber++;
             }
