@@ -24,6 +24,7 @@ MonoBehaviour:
   itemRequest:
   - {fileID: 11400000, guid: e587e1c10969ed549b2703ebf8f77e2d, type: 2}
   itemAmount: 02000000
+  rewardItem: {fileID: 0}
   hasGreeted: 0
   hasQuest: 1
   questFinished: 0

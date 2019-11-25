@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320053719160e1f479dd30d3798850e5, type: 3}
+  m_Name: Torch
+  m_EditorClassIdentifier: 
+  name: Torch
+  icon: {fileID: 21300000, guid: 4cd463afd7850dc4c8019b0c691f60ac, type: 3}
+  verb: Take
+  requiredTool: {fileID: 0}
+  prefab: {fileID: 5456051901525365109, guid: a5899be03c734c6408e9fe51f69b23f1, type: 3}
+  showsInPlayer: 1
+  amount: 0

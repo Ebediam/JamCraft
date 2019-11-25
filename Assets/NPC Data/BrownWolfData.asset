@@ -23,8 +23,12 @@ MonoBehaviour:
     type: 2}
   itemRequest:
   - {fileID: 11400000, guid: e587e1c10969ed549b2703ebf8f77e2d, type: 2}
-  itemAmount: 02000000
+  - {fileID: 11400000, guid: 0a76fd9abb7bde34e8d63921f733746e, type: 2}
+  - {fileID: 11400000, guid: 16390389a73efa14197fa986f211ae57, type: 2}
+  - {fileID: 11400000, guid: 7e1d807e96225314ab70800c2e207d21, type: 2}
+  - {fileID: 11400000, guid: 0105ca8ca4f35414caaac21f6e30f996, type: 2}
+  itemAmount: 0a0000000a000000010000000500000001000000
   rewardItem: {fileID: 0}
-  hasGreeted: 1
-  hasQuest: 0
-  questFinished: 1
+  hasGreeted: 0
+  hasQuest: 1
+  questFinished: 0

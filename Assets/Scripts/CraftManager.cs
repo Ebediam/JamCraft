@@ -21,6 +21,7 @@ public class CraftManager : MonoBehaviour
     PickupData secondComponent;
     PickupData craftedResult;
 
+    bool second;
 
     public ReceiptList receiptList;
 
@@ -34,21 +35,32 @@ public class CraftManager : MonoBehaviour
 
     public void SelectItem(Icon sourceIcon)
     {
-        if (!firstComponent)
+        if(!second)
         {
             firstComponent = sourceIcon.pickupData;
             firstItem.UpdateCraftElement(firstComponent);
-        }else if (!secondComponent)
+            craftItem.ResetIcon();
+            CheckCombination();
+            second = true;
+        }else
         {
             secondComponent = sourceIcon.pickupData;
             secondItem.UpdateCraftElement(secondComponent);
+            craftItem.ResetIcon();
             CheckCombination();
+            second = false;
         }
 
     }
 
     public void CheckCombination()
     {
+        if(!firstComponent || !secondComponent)
+        {
+            return;
+        }
+
+
         foreach(CombinationData combinationData in receiptList.combinationList)
         {
             if(firstComponent == combinationData.firstItem)

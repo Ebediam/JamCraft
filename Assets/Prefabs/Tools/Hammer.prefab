@@ -197,7 +197,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7866522439511055527}
-  - component: {fileID: 7866522439511055576}
   m_Layer: 0
   m_Name: HammerTool
   m_TagString: Untagged
@@ -220,16 +219,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50.245003, y: -191.03099, z: -8.523001}
---- !u!65 &7866522439511055576
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7866522439511055526}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.28919983, y: 1.187972, z: 0.41125488}
-  m_Center: {x: 0.009605407, y: 0.36281666, z: 0.06134008}

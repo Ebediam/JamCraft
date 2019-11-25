@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38e39fd671bc9b34ea14f705e4a00f10, type: 3}
-  m_Name: CraftTableReceiptList
+  m_Name: _CraftTableReceiptList
   m_EditorClassIdentifier: 
   combinationList:
   - {fileID: 11400000, guid: 3ec5060cf66306d4d8fb3e079b81ce71, type: 2}
+  - {fileID: 11400000, guid: f2e1cb117c2a612469cd6ee2c37c016f, type: 2}
+  - {fileID: 11400000, guid: e2df48efe3129304395e09f5d4529565, type: 2}
+  - {fileID: 11400000, guid: e89f4cb92ebfbc44e98493ce141d32ed, type: 2}

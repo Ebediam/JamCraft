@@ -10,12 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac9bc89b45c73d846a45292e1411ba34, type: 3}
-  m_Name: BW Greeting
+  m_Name: Snake Exhaust
   m_EditorClassIdentifier: 
   lines:
-  - Oh, hello!
-  - '...this? I''m trying to build a bridge so we can safely cross the river.'
-  - Sadly, I ran out of materials and I'm not sure where to find more...
-  - Could you please bring me a hammer and an axe? I can't find mines.
-  - Also, I'll need 10 branches, 10 stones and 5 vines.
-  - That would be really helpful!
+  - You shouldn't be here...
