@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33e258f5ce579c941a779d3e108f6ba1, type: 3}
-  m_Name: PlayerData
+  m_Script: {fileID: 11500000, guid: 38e39fd671bc9b34ea14f705e4a00f10, type: 3}
+  m_Name: CraftTableReceiptList
   m_EditorClassIdentifier: 
-  activeLevel: 0
-  storedPickups: []
+  combinationList:
+  - {fileID: 11400000, guid: 3ec5060cf66306d4d8fb3e079b81ce71, type: 2}

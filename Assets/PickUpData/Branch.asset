@@ -18,4 +18,4 @@ MonoBehaviour:
   requiredTool: {fileID: 0}
   prefab: {fileID: 1918410558276658252, guid: c896773a51b9b264ebcc98c1747ed6b3, type: 3}
   showsInPlayer: 0
-  amount: 7
+  amount: 0

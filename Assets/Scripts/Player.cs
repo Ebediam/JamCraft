@@ -54,6 +54,8 @@ public class Player : MonoBehaviour
     public bool isRunning;
     public Transform cameraTransform;
 
+    public static Player local;
+
     public AudioSource jumpSFX;
     public AudioSource fallSFX;
 
@@ -70,6 +72,11 @@ public class Player : MonoBehaviour
         jumpVelocity = Mathf.Sqrt(jumpHeight*gravity*-2f);
         
 
+    }
+
+    private void Start()
+    {
+        local = FindObjectOfType<Player>();
     }
 
     private void OnEnable()

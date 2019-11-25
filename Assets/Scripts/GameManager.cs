@@ -12,11 +12,18 @@ public class GameManager : MonoBehaviour
     public delegate void InventoryDelegate();
     public static InventoryDelegate InventoryEvent;
 
+    public delegate void CraftDelegate();
+    public static CraftDelegate CraftEvent;
+    public static CraftDelegate EndCraftEvent;
+
     public List<SpawnPoint> spawnPoints;
     public Player player;
-    public GameObject canvas;
+    public GameObject menuCanvas;
+    public CraftManager craftManager; 
     public PlayerInputs inputs;
     public static bool isPaused;
+
+    public static bool isCrafting;
 
     public AudioSource pickupSFX;
             
@@ -27,13 +34,16 @@ public class GameManager : MonoBehaviour
         inputs.GamePlay.Pause.performed += PauseGame;
 
         InventoryEvent += PlayPickUPSFX;
+        CraftEvent += ActivateCraftManager;
+        EndCraftEvent += DeactivateCraftManager;
+
 
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        canvas.SetActive(false);
+        menuCanvas.SetActive(false);
 
         foreach(SpawnPoint spawnPoint in spawnPoints)
         {
@@ -108,22 +118,31 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame(InputAction.CallbackContext context)
     {
-        if (isPaused) //the game was paused
+        if (isCrafting)
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            isPaused = false;
-            canvas.SetActive(false);
-            Time.timeScale = 1f;
+
         }
-        else //the game was running
+        else
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            isPaused = true;
-            canvas.SetActive(true);
-            Time.timeScale = 0f;
+
+            if (isPaused) //the game was paused
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                isPaused = false;
+                menuCanvas.SetActive(false);
+                Time.timeScale = 1f;
+            }
+            else //the game was running
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                isPaused = true;
+                menuCanvas.SetActive(true);
+                Time.timeScale = 0f;
+            }
         }
+
     }
 
     public void PlayPickUPSFX()
@@ -131,6 +150,15 @@ public class GameManager : MonoBehaviour
         pickupSFX.Play();
     }
 
+    public void ActivateCraftManager()
+    {
+        craftManager.gameObject.SetActive(true);
+    }
+
+    public void DeactivateCraftManager()
+    {
+        craftManager.gameObject.SetActive(false);
+    }
 
 
 
