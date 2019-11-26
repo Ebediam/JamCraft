@@ -9,8 +9,14 @@ public class Player : MonoBehaviour
 
     public Animator animator;
 
-    public delegate void InteractionDelegate();
-    public InteractionDelegate InteractionEvent;
+    public delegate void PlayerEventDelegate();
+    public PlayerEventDelegate InteractionEvent;
+
+    public delegate void EquipDelegate(PickupData item);
+    public static EquipDelegate EquipEvent;
+    public static PlayerEventDelegate UnequipEvent;
+    
+    
 
     public PlayerInputs input;
     public CharacterController controller;
@@ -24,6 +30,8 @@ public class Player : MonoBehaviour
     public AudioSource stepSFX;
 
     public ObjectHolder objectHolder;
+    public GameObject holdedObject;
+    public PickupData holdedObjectData;
     public bool isHandling;
 
     bool isGrounded;
@@ -70,7 +78,9 @@ public class Player : MonoBehaviour
         input.GamePlay.Move.performed += Move;
 
         jumpVelocity = Mathf.Sqrt(jumpHeight*gravity*-2f);
-        
+
+        EquipEvent += EquipTool;
+        UnequipEvent += UnequipTool;
 
     }
 
@@ -268,6 +278,31 @@ public class Player : MonoBehaviour
     public void PlayFootstepSFX()
     {
         stepSFX.Play();
+    }
+
+    public void EquipTool(PickupData toolData)
+    {
+        UnequipTool();
+
+        holdedObject = Instantiate(toolData.prefab);
+        holdedObject.transform.position = objectHolder.transform.position;
+        holdedObject.transform.rotation = objectHolder.transform.rotation;
+        holdedObject.transform.parent = objectHolder.transform;
+        holdedObjectData = toolData;
+        isHandling = true;
+    }
+
+    public void UnequipTool()
+    {
+        if (holdedObject)
+        {
+            Destroy(holdedObject);
+            holdedObject = null;
+            isHandling = false;
+        }
+
+
+
     }
 
 

@@ -108,11 +108,7 @@ public class GameManager : MonoBehaviour
         {
             if (!player.isHandling)
             {
-                GameObject prefab = Instantiate(item.prefab);
-                prefab.transform.position = player.objectHolder.transform.position;
-                prefab.transform.rotation = player.objectHolder.transform.rotation;
-                prefab.transform.parent = player.objectHolder.transform;
-                player.isHandling = true;
+                Player.EquipEvent?.Invoke(item);
             }
         }
 

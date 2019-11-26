@@ -20,6 +20,7 @@ public class Icon : MonoBehaviour
     private void Awake()
     {
         CraftManager.UpdateIconsEvent += UpdateIcon;
+
     }
 
     void Start()
@@ -87,5 +88,15 @@ public class Icon : MonoBehaviour
     public void OnClick() 
     {
         CraftManager.ItemSelectEvent?.Invoke(this);
+    }
+
+    public void Equip()
+    {
+        Debug.Log("equip item called with the item "+pickupData.name);
+        if (pickupData.showsInPlayer)
+        {
+            Player.EquipEvent?.Invoke(pickupData);
+        }
+
     }
 }

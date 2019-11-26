@@ -21,6 +21,9 @@ public class CraftManager : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI descriptionText;
 
+    public AudioSource craftSFX;
+    public AudioSource selectSFX;
+
     PickupData firstComponent;
     PickupData secondComponent;
     PickupData craftedResult;
@@ -39,6 +42,7 @@ public class CraftManager : MonoBehaviour
 
     public void SelectItem(Icon sourceIcon)
     {
+        selectSFX.Play();
         if(!second)
         {
             firstComponent = sourceIcon.pickupData;
@@ -112,10 +116,16 @@ public class CraftManager : MonoBehaviour
         craftedResult = craftItemData;
         craftItem.UpdateCraftElement(craftItemData);
         craftItem.button.interactable = true;
+
+        nameText.text = craftItemData.name;
+        descriptionText.text = craftItemData.description;
+
     }
 
     public void GetItem()
     {
+        craftSFX.Play();
+
         if (!firstComponent.remainsAfterCombination)
         {
             firstComponent.amount--;
