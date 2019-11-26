@@ -11,11 +11,16 @@ public class PickupData : ScriptableObject
 
     public string verb;
 
+    public string description;
+
     public PickupData requiredTool;
 
     public GameObject prefab;
     public bool showsInPlayer;
 
     public int amount;
+
+    public bool remainsAfterCombination;
+
 
 }

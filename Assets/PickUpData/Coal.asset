@@ -15,6 +15,8 @@ MonoBehaviour:
   name: Coal
   icon: {fileID: 21300000, guid: c2b1c166d1adabb41a252d59373628ee, type: 3}
   verb: Mine
+  description: A lump of coal. It burns quite well!
   requiredTool: {fileID: 11400000, guid: 16390389a73efa14197fa986f211ae57, type: 2}
   prefab: {fileID: 5848776873218762285, guid: 4c0c8ce24677da84ea04bee85dd889f6, type: 3}
   showsInPlayer: 0
+  amount: 0

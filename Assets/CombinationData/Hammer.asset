@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc7ecc8ce17c9e94eaca5ab47e90bc78, type: 3}
   m_Name: Hammer
   m_EditorClassIdentifier: 
-  firstItem: {fileID: 11400000, guid: e587e1c10969ed549b2703ebf8f77e2d, type: 2}
+  firstItem: {fileID: 11400000, guid: 9fe35f1f2ee1922488074b26422f9821, type: 2}
   secondItem: {fileID: 11400000, guid: 0a76fd9abb7bde34e8d63921f733746e, type: 2}
   craftedItem: {fileID: 11400000, guid: 16390389a73efa14197fa986f211ae57, type: 2}

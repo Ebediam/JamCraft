@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 320053719160e1f479dd30d3798850e5, type: 3}
-  m_Name: Vine
+  m_Name: Plank
   m_EditorClassIdentifier: 
-  name: Vine
-  icon: {fileID: 0}
-  verb: 
+  name: Plank
+  icon: {fileID: 21300000, guid: 0439ec8c09035e84a80d2108d81f22e0, type: 3}
+  verb: Grab
+  description: A wooden plank. Ideal to make bridges.
   requiredTool: {fileID: 0}
-  prefab: {fileID: 0}
+  prefab: {fileID: 5933279788735493629, guid: e5d8a1711d28a554db16a09f14c2b1cf, type: 3}
   showsInPlayer: 0
   amount: 0

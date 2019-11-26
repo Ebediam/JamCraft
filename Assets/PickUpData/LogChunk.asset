@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320053719160e1f479dd30d3798850e5, type: 3}
+  m_Name: LogChunk
+  m_EditorClassIdentifier: 
+  name: Log chunk
+  icon: {fileID: 21300000, guid: 3fa12702adb885e449e8b1d1d406edbf, type: 3}
+  verb: Grab
+  description: A big chunk of wood. Work on it a bit and you can get a rectangular
+    piece.
+  requiredTool: {fileID: 0}
+  prefab: {fileID: 5534681875414799152, guid: 8cd99711c68993a48a5c65e94669f069, type: 3}
+  showsInPlayer: 0
+  amount: 0

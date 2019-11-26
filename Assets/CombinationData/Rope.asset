@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7ecc8ce17c9e94eaca5ab47e90bc78, type: 3}
+  m_Name: Rope
+  m_EditorClassIdentifier: 
+  firstItem: {fileID: 11400000, guid: 38881665da32299418e2a0b9116d2fda, type: 2}
+  secondItem: {fileID: 11400000, guid: 38881665da32299418e2a0b9116d2fda, type: 2}
+  craftedItem: {fileID: 11400000, guid: 7e1d807e96225314ab70800c2e207d21, type: 2}

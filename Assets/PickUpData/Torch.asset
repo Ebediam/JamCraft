@@ -15,7 +15,10 @@ MonoBehaviour:
   name: Torch
   icon: {fileID: 21300000, guid: 4cd463afd7850dc4c8019b0c691f60ac, type: 3}
   verb: Take
+  description: A torch. Lit it on fire to provide heat, light and a source of flames
+    so you can burn whatever you want.
   requiredTool: {fileID: 0}
   prefab: {fileID: 5456051901525365109, guid: a5899be03c734c6408e9fe51f69b23f1, type: 3}
   showsInPlayer: 1
   amount: 0
+  remainsAfterCombination: 1

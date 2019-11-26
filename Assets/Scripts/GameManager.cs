@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
     public static bool isCrafting;
 
     public AudioSource pickupSFX;
+
+    
+    
             
     private void Awake()
     {

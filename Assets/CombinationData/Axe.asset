@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Axe
   m_EditorClassIdentifier: 
   firstItem: {fileID: 11400000, guid: 4ba44626fccf6084087220880c9d1205, type: 2}
-  secondItem: {fileID: 11400000, guid: e587e1c10969ed549b2703ebf8f77e2d, type: 2}
+  secondItem: {fileID: 11400000, guid: 9fe35f1f2ee1922488074b26422f9821, type: 2}
   craftedItem: {fileID: 11400000, guid: 0105ca8ca4f35414caaac21f6e30f996, type: 2}

@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Stone
   icon: {fileID: 21300000, guid: d0d545e4b5b328c4e9f49dbd47e68722, type: 3}
   verb: Pickup
+  description: A hard stone, not many things could break it... apart from itself.
   requiredTool: {fileID: 0}
   prefab: {fileID: 4603425244091355154, guid: 7105a41b243a1bc4f9e114ed5a2634c1, type: 3}
   showsInPlayer: 0

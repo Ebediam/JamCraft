@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CraftManager : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class CraftManager : MonoBehaviour
     public Icon firstItem;
     public Icon secondItem;
     public Icon craftItem;
+
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI descriptionText;
 
     PickupData firstComponent;
     PickupData secondComponent;
@@ -38,15 +42,39 @@ public class CraftManager : MonoBehaviour
         if(!second)
         {
             firstComponent = sourceIcon.pickupData;
+
+            if (firstComponent == secondComponent)
+            {
+                if (firstComponent.amount <= 1)
+                {
+                    secondComponent = null;
+                    secondItem.ResetIcon();
+                }
+            }
+
             firstItem.UpdateCraftElement(firstComponent);
             craftItem.ResetIcon();
+            UpdateSelecItemText(firstComponent);
             CheckCombination();
             second = true;
         }else
         {
+            
+
             secondComponent = sourceIcon.pickupData;
+
+            if(firstComponent == secondComponent)
+            {
+                if(firstComponent.amount <= 1)
+                {
+                    firstComponent = null;
+                    firstItem.ResetIcon();
+                }
+            }
+
             secondItem.UpdateCraftElement(secondComponent);
             craftItem.ResetIcon();
+            UpdateSelecItemText(secondComponent);
             CheckCombination();
             second = false;
         }
@@ -88,14 +116,28 @@ public class CraftManager : MonoBehaviour
 
     public void GetItem()
     {
-        firstComponent.amount--;
-        secondComponent.amount--;
+        if (!firstComponent.remainsAfterCombination)
+        {
+            firstComponent.amount--;
+        }
+
+        if (!secondComponent.remainsAfterCombination)
+        {
+            secondComponent.amount--;
+        }
+
+
         GameManager.GiveItemToPlayer(Player.local, craftedResult);
         ResetCraftManager();
 
     }
 
 
+    public void UpdateSelecItemText(PickupData item)
+    {
+        nameText.text = item.name;
+        descriptionText.text = item.description;
+    }
 
     public void ResetCraftManager()
     {
