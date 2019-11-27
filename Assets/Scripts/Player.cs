@@ -146,16 +146,18 @@ public class Player : MonoBehaviour
         {
             if (thirdPersonControl)
             {
-                
+                Debug.Log("x: " + movementDirection.x + ", Y: " + movementDirection.y);
+                //Third person
+                float targetRotation = Mathf.Atan2(movementDirection.x, movementDirection.y) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;                              
+                              
                 if (movementDirection.y != 0)
                 {
-                    
-                    currentSpeed = Mathf.Lerp(currentSpeed, speed, 0.1f);
-
-                    float targetRotation = Mathf.Atan2(movementDirection.x, movementDirection.y) * Mathf.Rad2Deg +cameraTransform.eulerAngles.y ;
-
                     transform.localEulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, turnSmoothTime);
-                    if (!isRunning)
+                    currentSpeed = Mathf.Lerp(currentSpeed, speed, 0.1f);
+                    controller.Move((transform.forward * Mathf.Sign(movementDirection.y)) * currentSpeed * movementDirection.y * Time.deltaTime);
+
+
+                    if (!isRunning && !stepSFX.isPlaying)
                     {
                         InvokeRepeating("PlayFootstepSFX", 0f, stepRate);
                     }
@@ -163,18 +165,32 @@ public class Player : MonoBehaviour
                     
 
                 }
+                else if(movementDirection.x != 0)
+                {
+                    transform.localEulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, turnSmoothTime);
+                    currentSpeed = Mathf.Lerp(currentSpeed, speed, 0.1f);
+                    isRunning = true;
+                    if (!isRunning && !stepSFX.isPlaying)
+                    {
+                        InvokeRepeating("PlayFootstepSFX", 0f, stepRate);
+                    }
+                    controller.Move((transform.forward * Mathf.Sign(movementDirection.x)) * currentSpeed * movementDirection.x * Time.deltaTime);
+                }
                 else
                 {
                     currentSpeed = Mathf.Lerp(currentSpeed, 0f, 0.2f);
                     CancelInvoke("PlayFootstepSFX");
                     isRunning = false;
-                }                              
+                }                           
                 
 
-                controller.Move(transform.forward * currentSpeed*movementDirection.y*Time.deltaTime);
+                
             }
             else
             {
+               
+
+                //Eagles eye
                 controller.Move(new Vector3(-movementDirection.y, 0f, movementDirection.x) * speed * Time.deltaTime);
 
                 transform.LookAt(transform.position + new Vector3(-movementDirection.y, 0f, movementDirection.x));

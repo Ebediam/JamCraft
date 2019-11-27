@@ -106,10 +106,10 @@ public class GameManager : MonoBehaviour
 
         if (item.showsInPlayer)
         {
-            if (!player.isHandling)
-            {
-                Player.EquipEvent?.Invoke(item);
-            }
+
+            
+            Player.EquipEvent?.Invoke(item);
+            
         }
 
         InventoryEvent?.Invoke();

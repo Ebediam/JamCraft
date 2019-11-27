@@ -18,6 +18,7 @@ MonoBehaviour:
   description: A small branch of a tree. It needs a bit of work before it can be used
     to craft tools.
   requiredTool: {fileID: 0}
-  prefab: {fileID: 1918410558276658252, guid: c896773a51b9b264ebcc98c1747ed6b3, type: 3}
-  showsInPlayer: 0
-  amount: 0
+  prefab: {fileID: 3353022887204091296, guid: bcd857263730e34489395ec43f2335f3, type: 3}
+  showsInPlayer: 1
+  amount: 1
+  remainsAfterCombination: 0
