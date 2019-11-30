@@ -18,7 +18,9 @@ MonoBehaviour:
   description: A torch. Lit it on fire to provide heat, light and a source of flames
     so you can burn whatever you want.
   requiredTool: {fileID: 0}
-  prefab: {fileID: 5456051901525365109, guid: a5899be03c734c6408e9fe51f69b23f1, type: 3}
+  pickupPrefab: {fileID: 0}
+  toolPrefab: {fileID: 5456051901525365109, guid: a5899be03c734c6408e9fe51f69b23f1,
+    type: 3}
   showsInPlayer: 1
   amount: 0
   remainsAfterCombination: 1

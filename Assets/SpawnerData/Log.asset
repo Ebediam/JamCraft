@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94b6f246450e26145b44b70845332b37, type: 3}
+  m_Name: Log
+  m_EditorClassIdentifier: 
+  name: Log
+  verb: Chop
+  spawnableItems:
+  - {fileID: 11400000, guid: e587e1c10969ed549b2703ebf8f77e2d, type: 2}
+  - {fileID: 11400000, guid: d585fcf8f0c0df84a84fc97fe5a76da8, type: 2}
+  - {fileID: 11400000, guid: e587e1c10969ed549b2703ebf8f77e2d, type: 2}
+  toolRequired: {fileID: 11400000, guid: 0105ca8ca4f35414caaac21f6e30f996, type: 2}

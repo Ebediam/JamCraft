@@ -17,6 +17,9 @@ MonoBehaviour:
   verb: Grab
   description: A wooden plank. Ideal to make bridges.
   requiredTool: {fileID: 0}
-  prefab: {fileID: 5933279788735493629, guid: e5d8a1711d28a554db16a09f14c2b1cf, type: 3}
+  pickupPrefab: {fileID: 5933279788735493629, guid: e5d8a1711d28a554db16a09f14c2b1cf,
+    type: 3}
+  toolPrefab: {fileID: 0}
   showsInPlayer: 0
   amount: 0
+  remainsAfterCombination: 0

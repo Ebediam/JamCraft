@@ -5,6 +5,8 @@ using UnityEngine;
 public class LookAt : MonoBehaviour
 {
     public Player player;
+    public float height = 3f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,7 @@ public class LookAt : MonoBehaviour
         if (player)
         {
             transform.LookAt(player.cameraTransform);
+            transform.position = transform.parent.position + Vector3.up * height;
         }
     }
 }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9088cb3e8b251d4182f77c94f59bfa9, type: 3}
-  m_Name: FoxData
+  m_Name: WolfData
   m_EditorClassIdentifier: 
   name: Fox
   greetingsConversation: {fileID: 11400000, guid: 6f8e1d1d4b979a54ca2ba925c75ade17,
@@ -26,6 +26,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0a76fd9abb7bde34e8d63921f733746e, type: 2}
   itemAmount: 0100000001000000
   rewardItem: {fileID: 11400000, guid: 16390389a73efa14197fa986f211ae57, type: 2}
-  hasGreeted: 0
-  hasQuest: 1
-  questFinished: 0
+  hasGreeted: 1
+  hasQuest: 0
+  questFinished: 1

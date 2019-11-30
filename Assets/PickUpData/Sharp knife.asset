@@ -18,7 +18,9 @@ MonoBehaviour:
   description: A rudimentary but effective stone knife. Use its blade to sharpen wood
     or to cut plants.
   requiredTool: {fileID: 0}
-  prefab: {fileID: 3081385371720010613, guid: 3e69e572dd1741641a62bc0b2259b8c5, type: 3}
+  pickupPrefab: {fileID: 0}
+  toolPrefab: {fileID: 3081385371720010613, guid: 3e69e572dd1741641a62bc0b2259b8c5,
+    type: 3}
   showsInPlayer: 1
   amount: 0
   remainsAfterCombination: 1

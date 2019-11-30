@@ -13,8 +13,8 @@ public class Interactable : MonoBehaviour
     public Transform textPromptMover;
     private LookAt lookAt;
     bool isInteracting;
-    
 
+    public bool disabled;
 
     public void Awake()
     {
@@ -22,8 +22,15 @@ public class Interactable : MonoBehaviour
         lookAt = textPromptMover.gameObject.AddComponent<LookAt>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
+        if (disabled)
+        {
+            return;
+        }
+
+
+
         if (other.GetComponent<Player>())
         {
             player = other.GetComponent<Player>();
@@ -33,8 +40,13 @@ public class Interactable : MonoBehaviour
         }
     }
        
+   
+
     private void OnTriggerExit(Collider other)
     {
+        
+
+
         if (other.GetComponent<Player>())
         {
             player = other.GetComponent<Player>();

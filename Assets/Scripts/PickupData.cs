@@ -15,7 +15,8 @@ public class PickupData : ScriptableObject
 
     public PickupData requiredTool;
 
-    public GameObject prefab;
+    public GameObject pickupPrefab;
+    public GameObject toolPrefab;
     public bool showsInPlayer;
 
     public int amount;

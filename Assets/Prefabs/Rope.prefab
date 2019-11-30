@@ -54,7 +54,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774980683}
-  m_LocalRotation: {x: -0.4949159, y: -0.4965451, z: -0.4347974, w: 0.56520134}
+  m_LocalRotation: {x: -0.49491593, y: -0.49654505, z: -0.43479735, w: 0.5652014}
   m_LocalPosition: {x: 2.31, y: -17.49, z: -0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -219,7 +219,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9027088447237281217}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!1 &2203272666499775609
 GameObject:
@@ -330,6 +330,37 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &7683959590696967951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5176960025117140116}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5176960025117140116
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683959590696967951}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.9, y: -1.16, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 9027088445362825349}
+  m_Father: {fileID: 9027088447237281217}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9027088445247343925
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,11 +606,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9027088445362825348}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.852, z: 3.2}
-  m_LocalScale: {x: 5, y: 0.11876484, z: 5}
+  m_LocalPosition: {x: 0, y: -0.85199994, z: 3.2000017}
+  m_LocalScale: {x: 5, y: 0.11876483, z: 5}
   m_Children:
   - {fileID: 9027088445247343926}
-  m_Father: {fileID: 9027088447237281217}
+  m_Father: {fileID: 5176960025117140116}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9027088445762233208
@@ -648,6 +679,7 @@ MonoBehaviour:
   player: {fileID: 0}
   textPrompt: {fileID: 9027088445247343883}
   textPromptMover: {fileID: 9027088445362825349}
+  disabled: 0
   startPoint: {fileID: 244958745}
   endPoint: {fileID: 1480099841}
   climbSpeed: 5
@@ -712,8 +744,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -8.409054, z: 0}
   m_LocalScale: {x: 0.2, y: 8.42, z: 0.2}
   m_Children:
-  - {fileID: 9027088445362825349}
   - {fileID: 1480099841}
+  - {fileID: 5176960025117140116}
   m_Father: {fileID: 9027088445762233209}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

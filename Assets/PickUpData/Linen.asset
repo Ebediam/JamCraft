@@ -17,6 +17,9 @@ MonoBehaviour:
   verb: Cut
   description: A dry flax stem. Its fibers are strong enough to make cloth.
   requiredTool: {fileID: 11400000, guid: 8b590078b2cf2354ea896b2ee5754ccf, type: 2}
-  prefab: {fileID: 3984221369443761099, guid: f5fd34952a2e62f4987a6e79460e59d2, type: 3}
+  pickupPrefab: {fileID: 3984221369443761099, guid: f5fd34952a2e62f4987a6e79460e59d2,
+    type: 3}
+  toolPrefab: {fileID: 0}
   showsInPlayer: 0
   amount: 0
+  remainsAfterCombination: 0

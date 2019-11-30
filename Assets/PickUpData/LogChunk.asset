@@ -18,6 +18,9 @@ MonoBehaviour:
   description: A big chunk of wood. Work on it a bit and you can get a rectangular
     piece.
   requiredTool: {fileID: 0}
-  prefab: {fileID: 5534681875414799152, guid: 8cd99711c68993a48a5c65e94669f069, type: 3}
+  pickupPrefab: {fileID: 5534681875414799152, guid: 8cd99711c68993a48a5c65e94669f069,
+    type: 3}
+  toolPrefab: {fileID: 0}
   showsInPlayer: 0
-  amount: 0
+  amount: 4
+  remainsAfterCombination: 0

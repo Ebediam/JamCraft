@@ -18,6 +18,9 @@ MonoBehaviour:
   description: A stone that has been sharpened hit after hit. Add some kind of rudimentary
     handle and you'll get a simple tool.
   requiredTool: {fileID: 0}
-  prefab: {fileID: 94359103149144822, guid: a411c56b6fb0dde4fa96fdc61e4ce6cc, type: 3}
+  pickupPrefab: {fileID: 94359103149144822, guid: a411c56b6fb0dde4fa96fdc61e4ce6cc,
+    type: 3}
+  toolPrefab: {fileID: 0}
   showsInPlayer: 0
   amount: 0
+  remainsAfterCombination: 0

@@ -17,6 +17,9 @@ MonoBehaviour:
   verb: Pickup
   description: A wooden stick, perfectly straigth. Use it as a handle to make tools!
   requiredTool: {fileID: 0}
-  prefab: {fileID: 5164097017001691930, guid: 594ca34f5255ddd49b8dc534afd05993, type: 3}
+  pickupPrefab: {fileID: 5164097017001691930, guid: 594ca34f5255ddd49b8dc534afd05993,
+    type: 3}
+  toolPrefab: {fileID: 0}
   showsInPlayer: 0
   amount: 0
+  remainsAfterCombination: 0

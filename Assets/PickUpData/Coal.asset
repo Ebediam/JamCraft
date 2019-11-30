@@ -17,6 +17,9 @@ MonoBehaviour:
   verb: Mine
   description: A lump of coal. It burns quite well!
   requiredTool: {fileID: 11400000, guid: 16390389a73efa14197fa986f211ae57, type: 2}
-  prefab: {fileID: 5848776873218762285, guid: 4c0c8ce24677da84ea04bee85dd889f6, type: 3}
+  pickupPrefab: {fileID: 5848776873218762285, guid: 4c0c8ce24677da84ea04bee85dd889f6,
+    type: 3}
+  toolPrefab: {fileID: 0}
   showsInPlayer: 0
   amount: 0
+  remainsAfterCombination: 0

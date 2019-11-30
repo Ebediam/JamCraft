@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     public delegate void PlayerEventDelegate();
     public PlayerEventDelegate InteractionEvent;
+    public static PlayerEventDelegate UseToolEvent;
 
     public delegate void EquipDelegate(PickupData item);
     public static EquipDelegate EquipEvent;
@@ -38,6 +39,7 @@ public class Player : MonoBehaviour
     bool jumpBoost;
     bool lockMovement;
 
+    bool playingFootstepSFX;
     public float speed;
 
     public bool thirdPersonControl;
@@ -81,6 +83,7 @@ public class Player : MonoBehaviour
 
         EquipEvent += EquipTool;
         UnequipEvent += UnequipTool;
+        UseToolEvent += PlayUseAnimation;
 
     }
 
@@ -108,11 +111,13 @@ public class Player : MonoBehaviour
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckDistance, groundLayer);
 
-        if(Physics.CheckSphere(ceilingCheck.position, groundCheckDistance, groundLayer))
+        /*if(Physics.CheckSphere(ceilingCheck.position, groundCheckDistance, groundLayer))
         {
             jumpBoost = false;
             velocity.y = 0f;
-        }
+        }*/
+
+        
                      
         if(isGrounded)
         {
@@ -120,7 +125,7 @@ public class Player : MonoBehaviour
             {
                 if (!fallSFX.isPlaying)
                 {
-                    fallSFX.Play();
+                    fallSFX.Play();                    
                     isRunning = false;
                 }
                 
@@ -133,20 +138,20 @@ public class Player : MonoBehaviour
             }
         }
         else
-        {
-            
+        {            
             
             if (jumpBoost)
             {
                 velocity.y += jumpBoostAmount * Time.deltaTime;
             }
+
+            
         }
 
         if (!lockMovement)
         {
             if (thirdPersonControl)
             {
-                Debug.Log("x: " + movementDirection.x + ", Y: " + movementDirection.y);
                 //Third person
                 float targetRotation = Mathf.Atan2(movementDirection.x, movementDirection.y) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;                              
                               
@@ -155,12 +160,8 @@ public class Player : MonoBehaviour
                     transform.localEulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, turnSmoothTime);
                     currentSpeed = Mathf.Lerp(currentSpeed, speed, 0.1f);
                     controller.Move((transform.forward * Mathf.Sign(movementDirection.y)) * currentSpeed * movementDirection.y * Time.deltaTime);
+                    
 
-
-                    if (!isRunning && !stepSFX.isPlaying)
-                    {
-                        InvokeRepeating("PlayFootstepSFX", 0f, stepRate);
-                    }
                     isRunning = true;
                     
 
@@ -170,16 +171,12 @@ public class Player : MonoBehaviour
                     transform.localEulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, turnSmoothTime);
                     currentSpeed = Mathf.Lerp(currentSpeed, speed, 0.1f);
                     isRunning = true;
-                    if (!isRunning && !stepSFX.isPlaying)
-                    {
-                        InvokeRepeating("PlayFootstepSFX", 0f, stepRate);
-                    }
+
                     controller.Move((transform.forward * Mathf.Sign(movementDirection.x)) * currentSpeed * movementDirection.x * Time.deltaTime);
                 }
                 else
                 {
                     currentSpeed = Mathf.Lerp(currentSpeed, 0f, 0.2f);
-                    CancelInvoke("PlayFootstepSFX");
                     isRunning = false;
                 }                           
                 
@@ -188,11 +185,21 @@ public class Player : MonoBehaviour
             }
             else
             {
-               
+               if(movementDirection.y != 0f)
+                {
+                    isRunning = true;
+                    currentSpeed = speed;
+                }
+                else
+                {
+                    isRunning = false;
+                    currentSpeed = 0f;
+                }
 
                 //Eagles eye
+                
                 controller.Move(new Vector3(-movementDirection.y, 0f, movementDirection.x) * speed * Time.deltaTime);
-
+                
                 transform.LookAt(transform.position + new Vector3(-movementDirection.y, 0f, movementDirection.x));
             }
 
@@ -200,7 +207,6 @@ public class Player : MonoBehaviour
         else
         {
             currentSpeed = 0f;
-            CancelInvoke("PlayFootstepSFX");
             isRunning = false;
         }
 
@@ -219,6 +225,19 @@ public class Player : MonoBehaviour
 
         animator.SetFloat("speedPercent", currentSpeed/speed);
         animator.SetBool("isJumping", !isGrounded);
+        animator.SetBool("isFalling", !jumpBoost);
+
+        if(isRunning && !playingFootstepSFX && isGrounded)
+        {
+            playingFootstepSFX = true;
+            InvokeRepeating("PlayFootstepSFX", 0f, stepRate);
+        }
+
+        if (!isGrounded || !isRunning)
+        {
+            CancelInvoke("PlayFootstepSFX");
+            playingFootstepSFX = false;
+        }
 
     }
 
@@ -243,6 +262,7 @@ public class Player : MonoBehaviour
         if (InteractionEvent != null)
         {
             InteractionEvent();
+
         }
         else if(!lockMovement)
         {            
@@ -258,7 +278,6 @@ public class Player : MonoBehaviour
         velocity.y = jumpVelocity;
         jumpBoost = true;
         Invoke("JumpBoostEndInvoke", jumpBoostMaxTime);
-        CancelInvoke("PlayFootstepSFX");
     }
 
     public void JumpBoostEnds(InputAction.CallbackContext context)
@@ -268,7 +287,6 @@ public class Player : MonoBehaviour
 
     public void JumpBoostEndInvoke()
     {
-        CancelInvoke("JumpBoostEndInvoke");
         jumpBoost = false;
     }
 
@@ -293,6 +311,7 @@ public class Player : MonoBehaviour
 
     public void PlayFootstepSFX()
     {
+        
         stepSFX.Play();
     }
 
@@ -300,7 +319,7 @@ public class Player : MonoBehaviour
     {
         UnequipTool();
 
-        holdedObject = Instantiate(toolData.prefab);
+        holdedObject = Instantiate(toolData.toolPrefab);
         holdedObject.transform.position = objectHolder.transform.position;
         holdedObject.transform.rotation = objectHolder.transform.rotation;
         holdedObject.transform.parent = objectHolder.transform;
@@ -316,9 +335,11 @@ public class Player : MonoBehaviour
             holdedObject = null;
             isHandling = false;
         }
+    }
 
-
-
+    public void PlayUseAnimation()
+    {
+        animator.Play("Use");
     }
 
 

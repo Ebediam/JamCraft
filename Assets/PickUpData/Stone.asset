@@ -17,7 +17,10 @@ MonoBehaviour:
   verb: Pickup
   description: A hard stone, not many things could break it... apart from itself.
   requiredTool: {fileID: 0}
-  prefab: {fileID: 484214002537273559, guid: 132fa9ef63dfe0b428346d8770761eaf, type: 3}
+  pickupPrefab: {fileID: 4603425244091355154, guid: 7105a41b243a1bc4f9e114ed5a2634c1,
+    type: 3}
+  toolPrefab: {fileID: 484214002537273559, guid: 132fa9ef63dfe0b428346d8770761eaf,
+    type: 3}
   showsInPlayer: 1
-  amount: 2
+  amount: 3
   remainsAfterCombination: 0
