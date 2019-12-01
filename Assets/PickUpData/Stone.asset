@@ -22,5 +22,5 @@ MonoBehaviour:
   toolPrefab: {fileID: 484214002537273559, guid: 132fa9ef63dfe0b428346d8770761eaf,
     type: 3}
   showsInPlayer: 1
-  amount: 3
+  amount: 99
   remainsAfterCombination: 0

@@ -73,14 +73,17 @@ public class PickUp : Interactable
         bool receiveItem = false;
         if (data.requiredTool)
         {
-            foreach(PickupData item in player.playerData.storedPickups)
+            if(data.requiredTool == player.holdedObjectData)
             {
-                if(data.requiredTool == item)
-                {
-                    receiveItem = true;
-                                        
-                }
+                receiveItem = true;
             }
+            else
+            {
+                receiveItem = false;
+            }      
+                                       
+                
+            
         }
         else
         {
@@ -89,6 +92,7 @@ public class PickUp : Interactable
 
         if (!receiveItem)
         {
+            GameManager.FailPickupEvent?.Invoke();
             return;
         }
 
@@ -97,7 +101,7 @@ public class PickUp : Interactable
 
 
 
-        GameManager.GiveItemToPlayer(player, data);
+        GameManager.GiveItemToPlayer(player, data, 1);
 
 
         ResetInteractable();

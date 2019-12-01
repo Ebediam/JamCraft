@@ -22,5 +22,5 @@ MonoBehaviour:
     type: 3}
   toolPrefab: {fileID: 0}
   showsInPlayer: 0
-  amount: 4
+  amount: 0
   remainsAfterCombination: 0

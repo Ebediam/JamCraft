@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9088cb3e8b251d4182f77c94f59bfa9, type: 3}
   m_Name: SnakeData
   m_EditorClassIdentifier: 
-  name: 
+  name: Snake
   greetingsConversation: {fileID: 11400000, guid: c18a113049ba81843bb897a8736e4dd2,
     type: 2}
   questCompletedConversation: {fileID: 0}
@@ -21,7 +21,8 @@ MonoBehaviour:
     type: 2}
   itemRequest: []
   itemAmount: 
-  rewardItem: {fileID: 0}
-  hasGreeted: 1
+  rewardItems: []
+  rewardAmount: 
+  hasGreeted: 0
   hasQuest: 0
   questFinished: 0

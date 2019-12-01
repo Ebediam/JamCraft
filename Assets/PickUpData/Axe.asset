@@ -15,12 +15,13 @@ MonoBehaviour:
   name: Axe
   icon: {fileID: 21300000, guid: 6230ec2dae5d90846a97c03d46b2b334, type: 3}
   verb: Take
-  description: 'A stone axe, quite sharp and durable. Use it to chop logs. '
+  description: 'A stone axe, quite sharp and durable. Use it to chop logs. It''s not
+    really useful for precision work, though. '
   requiredTool: {fileID: 0}
   pickupPrefab: {fileID: 8990112637269528246, guid: 6f52e50118d514c418663581eb61347a,
     type: 3}
   toolPrefab: {fileID: 4997975743915107607, guid: b9f70327bcfbc6c469738a1f55bec884,
     type: 3}
   showsInPlayer: 1
-  amount: 1
+  amount: 99
   remainsAfterCombination: 1

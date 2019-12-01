@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9088cb3e8b251d4182f77c94f59bfa9, type: 3}
   m_Name: WolfData
   m_EditorClassIdentifier: 
-  name: Fox
+  name: Wolf
   greetingsConversation: {fileID: 11400000, guid: 6f8e1d1d4b979a54ca2ba925c75ade17,
     type: 2}
   questCompletedConversation: {fileID: 11400000, guid: 04a5b941cfe9071498ac62fb45651430,
@@ -22,10 +22,12 @@ MonoBehaviour:
   exhaustedConversation: {fileID: 11400000, guid: 74d3b7546a0e5b144b0c5f227d956801,
     type: 2}
   itemRequest:
-  - {fileID: 11400000, guid: e587e1c10969ed549b2703ebf8f77e2d, type: 2}
-  - {fileID: 11400000, guid: 0a76fd9abb7bde34e8d63921f733746e, type: 2}
-  itemAmount: 0100000001000000
-  rewardItem: {fileID: 11400000, guid: 16390389a73efa14197fa986f211ae57, type: 2}
-  hasGreeted: 1
-  hasQuest: 0
-  questFinished: 1
+  - {fileID: 11400000, guid: d9809854f217c9647a57bc43669da797, type: 2}
+  itemAmount: 01000000
+  rewardItems:
+  - {fileID: 11400000, guid: 9539a2525141d0e4f9978dd258f3d1b7, type: 2}
+  - {fileID: 11400000, guid: 9fe35f1f2ee1922488074b26422f9821, type: 2}
+  rewardAmount: 0300000004000000
+  hasGreeted: 0
+  hasQuest: 1
+  questFinished: 0

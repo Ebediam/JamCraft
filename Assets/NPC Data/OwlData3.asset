@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9088cb3e8b251d4182f77c94f59bfa9, type: 3}
+  m_Name: OwlData3
+  m_EditorClassIdentifier: 
+  name: Owl3
+  greetingsConversation: {fileID: 11400000, guid: ee3b62cd62619cc4ba194c6d1aaceff8,
+    type: 2}
+  questCompletedConversation: {fileID: 11400000, guid: 0fbe08d22096fa54c80729755af9a8d4,
+    type: 2}
+  questNotCompletedConversation: {fileID: 11400000, guid: e094bbf0db396484a9f1d3f69f604d11,
+    type: 2}
+  exhaustedConversation: {fileID: 11400000, guid: ac4f6afbada359a40930a7dfbba8bcd5,
+    type: 2}
+  itemRequest:
+  - {fileID: 11400000, guid: e587e1c10969ed549b2703ebf8f77e2d, type: 2}
+  - {fileID: 11400000, guid: 9539a2525141d0e4f9978dd258f3d1b7, type: 2}
+  - {fileID: 11400000, guid: 7e1d807e96225314ab70800c2e207d21, type: 2}
+  itemAmount: 140000000a00000001000000
+  rewardItems: []
+  rewardAmount: 
+  hasGreeted: 0
+  hasQuest: 1
+  questFinished: 0

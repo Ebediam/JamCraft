@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9088cb3e8b251d4182f77c94f59bfa9, type: 3}
+  m_Name: YellowCatData
+  m_EditorClassIdentifier: 
+  name: Yellow Cat
+  greetingsConversation: {fileID: 11400000, guid: b598e26769efa804ebf3add07fbdd53e,
+    type: 2}
+  questCompletedConversation: {fileID: 11400000, guid: fa77be4152969fa4f854b8172733deb7,
+    type: 2}
+  questNotCompletedConversation: {fileID: 11400000, guid: ccf0f452b68378641bb915d945f3120d,
+    type: 2}
+  exhaustedConversation: {fileID: 0}
+  itemRequest:
+  - {fileID: 11400000, guid: c2e473342b0ca0e45a7bc9eef0d20521, type: 2}
+  - {fileID: 11400000, guid: 9fe35f1f2ee1922488074b26422f9821, type: 2}
+  itemAmount: 0a00000004000000
+  rewardItems:
+  - {fileID: 11400000, guid: 3c951a6a7aa488a4181686f876c9ecb6, type: 2}
+  rewardAmount: 01000000
+  hasGreeted: 0
+  hasQuest: 1
+  questFinished: 0

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9bc89b45c73d846a45292e1411ba34, type: 3}
+  m_Name: Greetings Owl#2
+  m_EditorClassIdentifier: 
+  lines:
+  - You're not going to get that far just by collecting things from the ground.
+  - You need to be able to craft your own tools and create more advanced items.
+  - Bring me 4 sticks and 3 planks and I'll build you a crafting table.
+  - In the forest there's a wolf, he might be able to help you gather the materials.

@@ -137,7 +137,7 @@ public class CraftManager : MonoBehaviour
         }
 
 
-        GameManager.GiveItemToPlayer(Player.local, craftedResult);
+        GameManager.GiveItemToPlayer(Player.local, craftedResult, 1);
         ResetCraftManager();
 
     }

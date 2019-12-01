@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac9bc89b45c73d846a45292e1411ba34, type: 3}
-  m_Name: Fox Quest Completed
+  m_Name: Owl QuestComplete#1
   m_EditorClassIdentifier: 
   lines:
-  - Yep, that's it. Give it to me...
-  - Here you have.
-  - No need to thank me, my pleasure.
+  - Oh, that's exactly what I need!
+  - Thanks for bringing me branches.
+  - Nice! Now we have a welcome sign.
+  - I think we're going to do a lot of building in here, I can't wait!
+  - Talk to me again when you're ready to start another project.

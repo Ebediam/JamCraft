@@ -457,6 +457,7 @@ MonoBehaviour:
   player: {fileID: 0}
   textPrompt: {fileID: 3881637924131339893}
   textPromptMover: {fileID: 117249669130172272}
+  disabled: 0
   data: {fileID: 11400000, guid: 38881665da32299418e2a0b9116d2fda, type: 2}
 --- !u!65 &1237196855832039322
 BoxCollider:
@@ -698,11 +699,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1218640445624058699, guid: e990592ea8b701a41a298ce278f9e45f,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1218640445624058697, guid: e990592ea8b701a41a298ce278f9e45f,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -722,6 +718,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1218640445624058699, guid: e990592ea8b701a41a298ce278f9e45f,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e990592ea8b701a41a298ce278f9e45f, type: 3}

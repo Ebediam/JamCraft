@@ -16,7 +16,7 @@ public class Interactable : MonoBehaviour
 
     public bool disabled;
 
-    public void Awake()
+    public virtual void Awake()
     {
         textPrompt.gameObject.SetActive(false);
         lookAt = textPromptMover.gameObject.AddComponent<LookAt>();
@@ -43,8 +43,7 @@ public class Interactable : MonoBehaviour
    
 
     private void OnTriggerExit(Collider other)
-    {
-        
+    {       
 
 
         if (other.GetComponent<Player>())

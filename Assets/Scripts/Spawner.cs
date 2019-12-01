@@ -43,7 +43,7 @@ public class Spawner : Interactable
         foreach(PickupData itemData in spawnerData.spawnableItems)
         {
             GameObject itemInstance = Instantiate(itemData.pickupPrefab, transform.position + Vector3.up, Quaternion.identity);
-            itemInstance.GetComponentInChildren<Rigidbody>().AddForce(Vector3.up, ForceMode.Impulse);
+            itemInstance.GetComponentInChildren<Rigidbody>().AddForce(Vector3.up*0.5f, ForceMode.Impulse);
         }
 
         onCooldown = true;

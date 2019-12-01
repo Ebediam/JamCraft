@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9bc89b45c73d846a45292e1411ba34, type: 3}
+  m_Name: 'Owl #3 - Greetings'
+  m_EditorClassIdentifier: 
+  lines:
+  - Mmmm, I think we need a watch tower.
+  - If we're going to build our village here, we need to be able to see who is approaching.
+  - (also, I really like towers...)
+  - 'Yeah, that seems like a great idea. '
+  - 'Okay, I''m going to need 10 planks, 20 branches and a rope. '
+  - I really recommend you getting an axe, there are not that many branches laying
+    around!
+  - You can craft one yourself or maybe you can find someone else's laying around.
+  - To equip a tool, open your inventory and click on the tool.

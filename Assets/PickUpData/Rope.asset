@@ -15,11 +15,11 @@ MonoBehaviour:
   name: Rope
   icon: {fileID: 21300000, guid: 68b0562861cdb62499a8c8e361da5ad6, type: 3}
   verb: 'Take '
-  description: A linen rope
+  description: A linen rope, useful when you need to tighten things up.
   requiredTool: {fileID: 0}
   pickupPrefab: {fileID: 6859498636601936528, guid: c95adb4c986ff1143bb24d8e88b52279,
     type: 3}
   toolPrefab: {fileID: 0}
   showsInPlayer: 0
-  amount: 1
+  amount: 93
   remainsAfterCombination: 0

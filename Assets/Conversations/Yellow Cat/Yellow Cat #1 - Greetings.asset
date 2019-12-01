@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac9bc89b45c73d846a45292e1411ba34, type: 3}
-  m_Name: Fox Greeting
+  m_Name: 'Yellow Cat #1 - Greetings'
   m_EditorClassIdentifier: 
   lines:
-  - Oh, hey! What are you up to?
-  - Me? Oh, I'm just chilling here.
-  - But as I'm a really nice guy, I can help you!
-  - Bring me a stick and a rock and I'll make you a hammer.
+  - Where do you think you're going?
+  - Do you plan to leave the village? You really shouldn't!
+  - The wilderness is not a safe place.
+  - In fact, I can use a little help to build a fence here, if you don't mind.
+  - Bring me 10 wooden stakes and 4 sticks and I'll do the job.

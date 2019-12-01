@@ -10,8 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac9bc89b45c73d846a45292e1411ba34, type: 3}
-  m_Name: Fox Quest not completed
+  m_Name: 'Owl #3 - Quest fail'
   m_EditorClassIdentifier: 
   lines:
-  - Where's the stick? Where's the rock?
-  - C'mon, they're laying around everywhere...
+  - How is it going?
+  - Yeah, I know I'm asking for a lot of things, but don't sweat about it, we're not
+    in a hurry.
+  - Explore the world, enjoy the views and keep collecting materials as you go!
+  - 'Remember: I need 10 planks, 20 branches and a rope.'
+  - To equip a tool, open your inventory and click on it.

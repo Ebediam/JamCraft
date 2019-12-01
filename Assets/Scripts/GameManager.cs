@@ -11,6 +11,11 @@ public class GameManager : MonoBehaviour
 
     public delegate void InventoryDelegate();
     public static InventoryDelegate InventoryEvent;
+    public static InventoryDelegate FailPickupEvent;
+
+    public static InventoryDelegate FadeOutEvent;
+    public static InventoryDelegate FadeInEvent;
+
 
     public delegate void CraftDelegate();
     public static CraftDelegate CraftEvent;
@@ -26,8 +31,9 @@ public class GameManager : MonoBehaviour
     public static bool isCrafting;
 
     public AudioSource pickupSFX;
+    public AudioSource failPickupSFX;
 
-    
+    public Animator transitionCanvas;
     
             
     private void Awake()
@@ -37,9 +43,12 @@ public class GameManager : MonoBehaviour
         inputs.GamePlay.Pause.performed += PauseGame;
 
         InventoryEvent += PlayPickUPSFX;
+        FailPickupEvent += PlayFailPickUPSFX;
+
+
         CraftEvent += ActivateCraftManager;
         EndCraftEvent += DeactivateCraftManager;
-
+        FadeOutEvent += FadeOut;
 
     }
 
@@ -72,11 +81,11 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public static void GiveItemToPlayer(Player player, PickupData item)
+    public static void GiveItemToPlayer(Player player, PickupData item, int amount)
     {
         if (player.playerData.storedPickups.Count == 0)
         {
-            item.amount++;
+            item.amount += amount;
             player.playerData.storedPickups.Add(item);
             
             
@@ -89,7 +98,7 @@ public class GameManager : MonoBehaviour
             {
                 if (storedPickupData == item)
                 {
-                    player.playerData.storedPickups[i].amount++;
+                    player.playerData.storedPickups[i].amount += amount;
                     alreadyHadPickup = true;
                     break;
                 }
@@ -98,7 +107,7 @@ public class GameManager : MonoBehaviour
 
             if (!alreadyHadPickup)
             {
-                item.amount++;
+                item.amount += amount;
                 player.playerData.storedPickups.Add(item);
                 
             }
@@ -149,6 +158,11 @@ public class GameManager : MonoBehaviour
         pickupSFX.Play();
     }
 
+    public void PlayFailPickUPSFX()
+    {
+        failPickupSFX.Play();
+    }
+
     public void ActivateCraftManager()
     {
         craftManager.gameObject.SetActive(true);
@@ -157,6 +171,16 @@ public class GameManager : MonoBehaviour
     public void DeactivateCraftManager()
     {
         craftManager.gameObject.SetActive(false);
+    }
+
+    public void FadeOut()
+    {
+        transitionCanvas.Play("FadeOut");
+    }
+    public void FadeIn()
+    {
+        FadeInEvent?.Invoke();
+        transitionCanvas.Play("FadeIn");
     }
 
 

@@ -15,7 +15,8 @@ public class NPCData : ScriptableObject
     public List<PickupData> itemRequest;
     public List<int> itemAmount;
 
-    public PickupData rewardItem;
+    public List<PickupData> rewardItems;
+    public List<int> rewardAmount;
 
 
     public bool hasGreeted;
