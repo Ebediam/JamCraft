@@ -22,6 +22,7 @@ public class PickupData : ScriptableObject
     public int amount;
 
     public bool remainsAfterCombination;
+    public bool respawns;
 
 
 }

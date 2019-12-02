@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7ecc8ce17c9e94eaca5ab47e90bc78, type: 3}
+  m_Name: Flat stone 2
+  m_EditorClassIdentifier: 
+  firstItem: {fileID: 11400000, guid: 4ba44626fccf6084087220880c9d1205, type: 2}
+  secondItem: {fileID: 11400000, guid: 0a76fd9abb7bde34e8d63921f733746e, type: 2}
+  craftedItem: {fileID: 11400000, guid: 1247758897f3dfd48a514394e21a9437, type: 2}

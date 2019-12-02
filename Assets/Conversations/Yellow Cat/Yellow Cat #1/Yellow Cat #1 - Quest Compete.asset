@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac9bc89b45c73d846a45292e1411ba34, type: 3}
-  m_Name: 'Yellow Cat #1 - Greetings'
+  m_Name: 'Yellow Cat #1 - Quest Compete'
   m_EditorClassIdentifier: 
   lines:
-  - Where do you think you're going?
-  - Do you plan to leave the village? You really shouldn't!
-  - The wilderness is not a safe place.
-  - In fact, I can use a little help to build a fence here, if you don't mind.
-  - Bring me 10 wooden stakes and 4 sticks and I'll do the job.
+  - Yes! That's exactly what I need!
+  - Voila, work done. Now we're a little bit more safe.
+  - Thanks for your help.
+  - Here, have a coin.
+  - Now let me see this village you're building...

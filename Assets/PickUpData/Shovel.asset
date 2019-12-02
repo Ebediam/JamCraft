@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320053719160e1f479dd30d3798850e5, type: 3}
+  m_Name: Shovel
+  m_EditorClassIdentifier: 
+  name: Shovel
+  icon: {fileID: 21300000, guid: e0cce6fa46c85b147bf6006c94ea2060, type: 3}
+  verb: Grab
+  description: A solid shovel, use it to dig holes in the ground. Holding it, you
+    feel... like a knight.
+  requiredTool: {fileID: 0}
+  pickupPrefab: {fileID: 0}
+  toolPrefab: {fileID: 7328784498442089013, guid: 857364c50e72df441a58c962127401b0,
+    type: 3}
+  showsInPlayer: 1
+  amount: 0
+  remainsAfterCombination: 1

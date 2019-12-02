@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9088cb3e8b251d4182f77c94f59bfa9, type: 3}
-  m_Name: WolfData
+  m_Name: WolfData2
   m_EditorClassIdentifier: 
-  name: Wolf
-  greetingsConversation: {fileID: 11400000, guid: 6f8e1d1d4b979a54ca2ba925c75ade17,
+  name: Wolf2
+  greetingsConversation: {fileID: 11400000, guid: 17d8ccbf97d4f244dace4bde735b00a5,
     type: 2}
-  questCompletedConversation: {fileID: 11400000, guid: 04a5b941cfe9071498ac62fb45651430,
+  questCompletedConversation: {fileID: 11400000, guid: d4029c256e4424948b4d7f59a90da48d,
     type: 2}
-  questNotCompletedConversation: {fileID: 11400000, guid: b012406afc1db1f45bbcac4285ea6901,
+  questNotCompletedConversation: {fileID: 11400000, guid: 377119e1fdabb1b4b9f39a2aba7f6ecd,
     type: 2}
   exhaustedConversation: {fileID: 11400000, guid: 74d3b7546a0e5b144b0c5f227d956801,
     type: 2}
   itemRequest:
-  - {fileID: 11400000, guid: d9809854f217c9647a57bc43669da797, type: 2}
-  itemAmount: 01000000
+  - {fileID: 11400000, guid: 0a76fd9abb7bde34e8d63921f733746e, type: 2}
+  - {fileID: 11400000, guid: 16390389a73efa14197fa986f211ae57, type: 2}
+  itemAmount: 0a00000001000000
   rewardItems:
-  - {fileID: 11400000, guid: 9539a2525141d0e4f9978dd258f3d1b7, type: 2}
-  - {fileID: 11400000, guid: 9fe35f1f2ee1922488074b26422f9821, type: 2}
-  rewardAmount: 0300000004000000
+  - {fileID: 11400000, guid: 3c951a6a7aa488a4181686f876c9ecb6, type: 2}
+  rewardAmount: 01000000
   hasGreeted: 0
   hasQuest: 1
   questFinished: 0

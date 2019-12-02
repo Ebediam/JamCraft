@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9088cb3e8b251d4182f77c94f59bfa9, type: 3}
+  m_Name: WolfData3
+  m_EditorClassIdentifier: 
+  name: Wolf3
+  greetingsConversation: {fileID: 11400000, guid: 2b29cf2e05d9fa248830214f9076ff5a,
+    type: 2}
+  questCompletedConversation: {fileID: 11400000, guid: f3aaa820dbb530e43a56d400db8837bc,
+    type: 2}
+  questNotCompletedConversation: {fileID: 11400000, guid: 27a91f2d386485b4dbc5e5b584e982b1,
+    type: 2}
+  exhaustedConversation: {fileID: 11400000, guid: 74d3b7546a0e5b144b0c5f227d956801,
+    type: 2}
+  itemRequest:
+  - {fileID: 11400000, guid: 1247758897f3dfd48a514394e21a9437, type: 2}
+  - {fileID: 11400000, guid: 0a76fd9abb7bde34e8d63921f733746e, type: 2}
+  - {fileID: 11400000, guid: 40195ec15c57f524cbd33d84462823c5, type: 2}
+  itemAmount: 050000000a00000002000000
+  rewardItems:
+  - {fileID: 11400000, guid: 3c951a6a7aa488a4181686f876c9ecb6, type: 2}
+  rewardAmount: 01000000
+  hasGreeted: 0
+  hasQuest: 1
+  questFinished: 0

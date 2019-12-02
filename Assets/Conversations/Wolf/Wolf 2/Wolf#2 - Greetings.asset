@@ -10,12 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac9bc89b45c73d846a45292e1411ba34, type: 3}
-  m_Name: 'Owl Greeting #1'
+  m_Name: Wolf#2 - Greetings
   m_EditorClassIdentifier: 
   lines:
-  - Hello, friend, welcome!
-  - I really need your help, as you can see there's not a lot going on around now.
-  - We should start building some neat things!
-  - I was going to build a welcome post, but I've made short of wood.
-  - Please, bring me two branches and I'll finish it.
-  - (You can open your inventory pressing ESC, ENTER or E)
+  - Well, I have to say, I'm not terribly impressed.
+  - But I suppose it's time to move from the forest.
+  - Bring me 10 stones and a hammer I'll start to build a house.

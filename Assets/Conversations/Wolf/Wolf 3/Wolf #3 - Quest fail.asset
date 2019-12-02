@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac9bc89b45c73d846a45292e1411ba34, type: 3}
-  m_Name: 'Yellow Cat #1 - Quest Compete'
+  m_Name: 'Wolf #3 - Quest fail'
   m_EditorClassIdentifier: 
   lines:
-  - Yes! That's exactly what I need!
-  - Voila, work done. Now we're a little bit more safe.
-  - Thanks for your help.
-  - Here, have a coin.
+  - I need 10 rocks, 5 flat rocks and a hammer.
+  - How to get flat rocks? Just hit them with something until you chip them enough.

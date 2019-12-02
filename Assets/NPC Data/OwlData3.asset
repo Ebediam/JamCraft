@@ -26,8 +26,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9539a2525141d0e4f9978dd258f3d1b7, type: 2}
   - {fileID: 11400000, guid: 7e1d807e96225314ab70800c2e207d21, type: 2}
   itemAmount: 140000000a00000001000000
-  rewardItems: []
-  rewardAmount: 
+  rewardItems:
+  - {fileID: 11400000, guid: 3c951a6a7aa488a4181686f876c9ecb6, type: 2}
+  rewardAmount: 01000000
   hasGreeted: 0
   hasQuest: 1
   questFinished: 0

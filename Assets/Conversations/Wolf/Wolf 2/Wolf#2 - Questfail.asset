@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac9bc89b45c73d846a45292e1411ba34, type: 3}
-  m_Name: Wolf#1-Quest completed
+  m_Name: Wolf#2 - Questfail
   m_EditorClassIdentifier: 
   lines:
-  - Oh, that's a red flower!
-  - Thanks for bringing it to me.
-  - Here, have some sticks and planks.
+  - How is it going? No rocks yet?
+  - Remember, I need 10 rocks and a hammer to build the foundation of a house.

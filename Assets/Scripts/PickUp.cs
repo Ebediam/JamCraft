@@ -113,9 +113,20 @@ public class PickUp : Interactable
         }*/
 
         
-        this.gameObject.SetActive(false); 
+        this.gameObject.SetActive(false);
+
+        Invoke("Reactivate", 60f);
+
+
+
         
 
+    }
+
+    public void Reactivate()
+    {
+        this.gameObject.SetActive(true);
+        
     }
 
     public override void InteractionEnds()

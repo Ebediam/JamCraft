@@ -10,17 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 320053719160e1f479dd30d3798850e5, type: 3}
-  m_Name: Coal
+  m_Name: Glass
   m_EditorClassIdentifier: 
-  name: Coal
-  icon: {fileID: 21300000, guid: c2b1c166d1adabb41a252d59373628ee, type: 3}
-  verb: Mine
-  description: A lump of coal. It burns quite well!
-  requiredTool: {fileID: 11400000, guid: 16390389a73efa14197fa986f211ae57, type: 2}
-  pickupPrefab: {fileID: 5848776873218762285, guid: 4c0c8ce24677da84ea04bee85dd889f6,
-    type: 3}
+  name: Glass
+  icon: {fileID: 21300000, guid: 95e81ad18d71f1347bd1f91109a76eb4, type: 3}
+  verb: 
+  description: A fine piece of glass. You can see through it, it's like magic!
+  requiredTool: {fileID: 0}
+  pickupPrefab: {fileID: 0}
   toolPrefab: {fileID: 0}
   showsInPlayer: 0
-  amount: 1
+  amount: 97
   remainsAfterCombination: 0
-  respawns: 1
+  respawns: 0
